@@ -1,0 +1,51 @@
+<PropertyList>
+
+    <path>TracerSphere.ac</path>
+  
+  <animation>
+    <enable-hot type="bool">false</enable-hot>
+  </animation>
+  
+	
+	
+    <animation>
+        <type>dist-scale</type>
+        <name>tracer round</name>
+        <object-name>tracer</object-name>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0.1</dep>
+            </entry>
+            <entry>
+                <ind>400</ind>
+                <dep>0.6</dep>
+            </entry>
+            <entry>
+                <ind>1700</ind>
+                <dep>1.35</dep>
+            </entry>
+            <entry>
+                <ind>1900</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+    </animation>
+    
+    <!--><model>
+		<path>Aircraft/L-159/Models/Effects/Guns/trajectory.xml</path>
+		<name>trajectory</name>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model><-->
+    
+    <!--><animation>
+      <type>billboard</type>
+      <object-name>tracer</object-name>
+      <spherical type="bool">true</spherical>
+    </animation><-->
+
+</PropertyList>

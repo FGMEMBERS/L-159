@@ -1,0 +1,116 @@
+CURRENT VERSION:  0.7
+
+
+CHANGELOG:
+
+
+0.1 - 30.3.2014
+Initial non-release version, FDM written from scratch
+No animations, no textures, just static model (provided by pjedvaj) and FDM
+
+
+0.2 - 02.04.2014
+Second non-release version
+FDM: 
+-Added properly placed speedbrake
+-More speed bleed at turns, a bit more throttle on landing needed
+3D model: 
+-Fixed ambient light
+-Fixed tail color
+-Fixed pilot seat position
+Animations, effects: 
+-Landing gear and airbrake animated
+-Added tip trails, smoke (with custom modified texture), contrail (depends on property /environment/contrail)
+Other: 
+-Cockpit view position adjusted
+
+
+0.3 - 13.4.2014
+Another non-release development version
+FDM: 
+-Major FDM overhaul, now properly scaled (before, the overall size was based on wrong information => ~97% of true size)
+-Changed coordinate system
+-Landing speed, climb rate, takeoff roll etc. now better match real performance
+-Revisited and corrected fuel tanks position and capacity
+3D model: 
+-Changed coordinate system (no longer [0,0,0] at nosetip) to counter multiplayer center of view issues
+-Fixed minor Y offset
+-Fixed gear door and speedbrake color
+Sound: 
+-Added basic sound effects with some customizations; will be subject to further tuning
+Animations, effects: 
+-Nose gear shaft door animation asymmetry fixed
+Other:
+-Custom autopilot tuned
+
+
+0.4 - 26.04.2014
+3D model: 
+-Brand new model by pjedvaj
+-Added some details (bottom beacon, taxi light, landing lights reflectors)
+-Some materials customizations
+Animations, effects:
+-All standard animations implemented
+-Added wing vapour (scales depending on alpha)
+-Tuned smoke dynamics, added heat haze
+-Nav lights, landing lights, taxi light and beacon animated (with blend in daylight), works over MP, lights control dialog added
+Sound: 
+-MP sound support, fixed constant stall warning over MP
+
+
+0.5 - 04.05.2014
+Animations, effects: 
+-Rembrandt support
+-Fixed nav light animation problems when disabling and reenabling quickly
+-Landing lights point more down, tuned dist-scale
+-Nav lights and beacon flares centered accurately
+3D model: 
+-Detriangulized mesh, many manual cleanups where automated tool made mistakes
+-Removed some doubled vertices (discovered when handling detriangulization mistakes), slight alignment of some parts
+Other:
+-Slight redesign of lights dialog
+
+
+0.6 - 25.05.2014
+Animations, effects:
+-Fixed multiple nav lights and beacon timers running at once when MP aircraft reconnects
+-Payloads support (MP transfered visibility)
+-Bullet impact animation, MP visible tracers
+-Rembrandt light on fuel probe
+3D model: 
+-PL-20 Plamen cannon pod modelled
+-Optional experimental fuel probe
+-Some material changes
+-Weak Chrome effect on canopy
+-Taller wing pylons
+-Work on details of the model (nosetip fix, beacon shape, ...)
+Sound: 
+-Fixed missing parts of MP sound
+-Cannon sound (using stock sound for now)
+Other:
+-Help dialog added
+
+
+0.7 - 9.7.2014
+Animations, effects:
+-Unique  disintegration animation on impact
+-Impact explosion animation with fire and smoke
+-Slightly increased range of MP bullets animation
+-Everything so far mentioned works over MP
+-Flares tuned
+-Rembrandt landing lights direction tuned
+FDM: 
+-Elevator response fixed
+-Reduced aileron effectiveness
+-Fixed wrong fuel solver settings from last version
+-More dragging flaps (watch your speed on landing!)
+-It's much more difficult to fly with heavy payload
+Sound:
+-Stall warning tuned to match current stall behavior
+Systems:
+-Internal fuel transfer system
+-Automatic flap retracting
+-Automatic speedbrake deployment when exceeding Vne
+Other:
+-Fixed roll axis autopilot behavior
+-Aircraft help dialog updated
