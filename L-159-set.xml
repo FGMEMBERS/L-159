@@ -9,7 +9,7 @@ Created and maintained by Tomáš Komárek
 <sim include="Dialogs/Help.xml">
   <description>Aero Vodochody L-159 ALCA</description>
   <author>Tomaskom, Pjedvaj (3D model)</author>
-  <status>beta 0.5</status>
+  <status>beta</status>
   <flight-model>yasim</flight-model>
   <aero>L-159-yasim</aero>  
 
@@ -19,6 +19,9 @@ Created and maintained by Tomáš Komárek
 
   <model>
     <path>Aircraft/L-159/Models/L-159.xml</path>
+    <livery> 
+      <file type="string" /> 
+    </livery>
   </model>
 
   <rating>
@@ -37,17 +40,17 @@ Created and maintained by Tomáš Komárek
   <!-- Reposition view centers ([-7.2058,0,-1.0878] is nosetip)
   YASim X,Y,Z are here Y,Z,X -->
   <view n="0">
-    <internal archive="y">true</internal>
-      <config>
-        <x-offset-m archive="y">0.007</x-offset-m>
-        <y-offset-m archive="y">0.0</y-offset-m>
-        <z-offset-m archive="y">-3.30</z-offset-m>
-        <pitch-offset-deg>-7</pitch-offset-deg>
-        <default-field-of-view-deg>112</default-field-of-view-deg>
-      </config>
-      <dynamic>
-        <enabled type="bool">0</enabled>
-      </dynamic>
+    <internal type="bool" archive="y">true</internal>
+    <config>
+      <x-offset-m type="double" archive="y">0.007</x-offset-m>
+      <y-offset-m type="double" archive="y">0.0</y-offset-m>
+      <z-offset-m type="double" archive="y">-3.30</z-offset-m>
+      <pitch-offset-deg type="double">-7</pitch-offset-deg>
+      <default-field-of-view-deg type="double">112</default-field-of-view-deg>
+    </config>
+    <dynamic>
+      <enabled type="bool">0</enabled>
+    </dynamic>
   </view>
   <view n="1">
     <config>
@@ -105,7 +108,39 @@ Created and maintained by Tomáš Komárek
       type="double">-0.3</target-y-offset-m>
     </config>
   </view>
-  <!-- TODO: add instructor view -->
+  <!-- instructor view -->
+  <view n="100">
+    <name  type="string">Instructor view</name>
+    <type>lookfrom</type>
+    <internal type="bool" archive="y">true</internal>
+    <config>
+      <x-offset-m type="double" archive="y">0.00</x-offset-m>
+      <y-offset-m type="double" archive="y">0.30</y-offset-m>
+      <z-offset-m type="double" archive="y">-1.980</z-offset-m>
+      <pitch-offset-deg  type="double">-7</pitch-offset-deg>
+      <default-field-of-view-deg  type="double">112</default-field-of-view-deg>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.5</ground-level-nearplane-m>
+      <limits>
+        <enabled type="bool">true</enabled>
+        <left>
+          <heading-max-deg type="double">140</heading-max-deg>
+          <x-offset-max-m type="double">0.15</x-offset-max-m>
+          <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+        </left>
+        <right>
+          <heading-max-deg type="double">140</heading-max-deg>
+          <x-offset-max-m type="double">0.15</x-offset-max-m>
+          <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+        </right>
+      </limits>
+    </config>
+    <dynamic>
+      <enabled type="bool">0</enabled>
+    </dynamic>
+    
+  </view>
 
 
   <!-- Flaps positions: 0 deg, 25 deg (takeoff), 44 deg (landing) -->
@@ -144,6 +179,10 @@ Created and maintained by Tomáš Komárek
     <opt>
       <name>Mk82</name>
       <lbs>540</lbs>
+    </opt>
+    <opt>
+      <name>Smokewinder</name>
+      <lbs>190</lbs>
     </opt>
   </weight>
   <weight n="2"> <!-- Right wing middle pylon -->
@@ -317,6 +356,10 @@ Created and maintained by Tomáš Komárek
       <name>Mk82</name>
       <lbs>540</lbs>
     </opt>
+    <opt>
+      <name>Smokewinder</name>
+      <lbs>190</lbs>
+    </opt>
   </weight>
   <weight n="8"> <!-- Fixed refueling probe -->
     <name>Refueling probe</name>
@@ -349,7 +392,7 @@ Created and maintained by Tomáš Komárek
           <label>Select Livery</label>
           <binding>
             <command>nasal</command>
-            <script>;</script>
+            <script>aircraft.livery.dialog.toggle();</script>
           </binding>
         </item>
         
@@ -358,6 +401,22 @@ Created and maintained by Tomáš Komárek
           <binding>
             <command>nasal</command>
             <script>L159.lights_dialog.toggle();</script>
+          </binding>
+        </item>
+        
+        <item>
+          <label>Ground refuel</label>
+          <binding>
+            <command>nasal</command>
+            <script>if(fuelsystem.refuel_galsPerSec == 0) {
+                    	fuelsystem.refuel(4);
+                    	screen.log.write("Refueling all tanks, 4 gal/s.", 1, 0.6, 0.1);
+                    }
+                    else {
+                    	fuelsystem.refuel(0);
+                    	screen.log.write("Stopped refueling.", 1, 0.6, 0.1);
+                    }
+            </script>
           </binding>
         </item>
         
@@ -379,11 +438,10 @@ Created and maintained by Tomáš Komárek
             <command>nasal</command>
             <script>
             	if(getprop("/controls/armament/report-ammo")) {
-            		screen.log.write("Ammo reporting on");
-            		screen.log.write("Plamen rounds left: " ~ getprop("/controls/armament/roundsLeft"), 1, 0.6, 0.1);
+            		gui.popupTip("Plamen rounds left: " ~ getprop("/controls/armament/roundsLeft") ~ "\nAmmo reporting on");
             	}
             	else
-            		screen.log.write("Ammo reporting off");
+            		gui.popupTip("Ammo reporting off");
             </script>
           </binding>
         </item>
@@ -402,34 +460,39 @@ Created and maintained by Tomáš Komárek
       <float n="0" alias="/orientation/alpha-deg" />
       <!-- IAS -->
       <float n="1" alias="/velocities/airspeed-kt" />
-      
       <!-- Groundspeed -->
       <float n="2" alias="/velocities/groundspeed-kt" />
-      
       <!-- Groundspeed -->
       <float n="3" alias="/position/altitude-agl-ft" />
+      <!-- Engine thrust: float[4] defined later -->
+      <!-- Formation lights -->
+      <float n="5" type="double">0</float>
       
       <!-- Nav lights on -->
-      <int n="0" alias="/controls/lighting/nav-lights" />
+      <int n="0" alias="/controls/lighting/nav-lights-switch" />
       <!-- Beacon on -->
-      <int n="1" alias="/controls/lighting/beacon" />
+      <int n="1" alias="/controls/lighting/beacon-switch" />
       <!-- Landing lights on -->
-      <int n="2" alias="/controls/lighting/landing-lights" />
+      <int n="2" alias="/controls/lighting/landing-lights-switch" />
       <!-- Taxi light on -->
-      <int n="3" alias="/controls/lighting/taxi-light" />
+      <int n="3" alias="/controls/lighting/taxi-light-switch" />
       
       <!-- Engine on -->
       <int n="4" alias="/engines/engine[0]/running" />
       <!-- Engine thrust -->
-      <float n="4" alias="engines/engine/prop-thrust" />
+      <float n="4" alias="/engines/engine/prop-thrust" />
       
       <!--Contrail -->
       <int n="5" alias="/environment/contrail" />
       
       <!-- int[6] reserved for MP trigger -->
+      <int n="6" type="int">0</int>
       
       <!-- Crashed -->
       <int n="7" alias="/sim/crashed" />
+      
+      <!-- Smokewinders on -->
+      <int n="8" alias="/controls/switches/smokewinders" />
       
       
       <!-- Show all pylons? -->
@@ -459,8 +522,11 @@ Created and maintained by Tomáš Komárek
   
 </sim>
 
-
+<instructor>
+  <hide-me type="bool">false</hide-me>
+  </instructor>
 <input>
+
   <keyboard include="Input/L-159-keyboard.xml" />
 </input>
 
@@ -491,7 +557,10 @@ Created and maintained by Tomáš Komárek
 <controls>
   <gear>
     <brake-parking type="double">1.0</brake-parking>
-  </gear>  
+  </gear>
+  <switches>
+    <smokewinders type="bool">false</smokewinders>
+  </switches>
 </controls>
 
 
@@ -566,6 +635,13 @@ Created and maintained by Tomáš Komárek
 
 
 <nasal>
+  <version>
+    <script>
+      var s = split(".", getprop("/sim/version/flightgear"));
+      props.globals.initNode("/sim/version/fg-major", s[0], "INT");
+      props.globals.initNode("/sim/version/fg-minor", s[1], "INT");
+    </script>
+  </version>
   <preinit>
     <file>Aircraft/L-159/Nasal/Preinit.nas</file>
   </preinit>
@@ -576,9 +652,15 @@ Created and maintained by Tomáš Komárek
   <lights>
     <file>Aircraft/L-159/Nasal/Lights.nas</file>
   </lights>
+  <payloads>
+    <file>Aircraft/L-159/Nasal/Payloads.nas</file>
+  </payloads>
   <weapons>
     <file>Aircraft/L-159/Nasal/Weapons.nas</file>
   </weapons>
+  <!--><hitcheck>
+    <file>Aircraft/L-159/Nasal/HitCheck.nas</file>
+  </hitcheck><-->
   <weight>
     <file>Aircraft/L-159/Nasal/Weight.nas</file>
   </weight>
@@ -600,6 +682,9 @@ Created and maintained by Tomáš Komárek
   <disintegration>
     <file>Aircraft/L-159/Nasal/Disintegration.nas</file>
   </disintegration>
+  <MpStr>
+    <file>Aircraft/L-159/Nasal/MpEncode.nas</file>
+  </MpStr>
   <L159>
     <file>Aircraft/L-159/Nasal/Postinit.nas</file>
   </L159>

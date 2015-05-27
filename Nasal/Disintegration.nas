@@ -3,6 +3,7 @@ props.globals.initNode("/disintegration/crashTime", 0, "DOUBLE");
 props.globals.initNode("/disintegration/negAGL", 0, "DOUBLE");
 props.globals.initNode("/disintegration/severity", 1, "DOUBLE");
 
+props.globals.initNode("/disintegration/parts");
 var partsNode = props.globals.getNode("/disintegration/parts");
 
 var degToRad = 3.141592654/180;

@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <!-- EFFECTS-->
+  
+  <!-- tiptrails-->
+  <model>
+    <name>TiptrailR</name>
+    <path>Aircraft/L-159/Models/Effects/Tiptrail/TiptrailR.xml</path>
+    <offsets>
+      <x-m>1.7329</x-m>
+      <y-m>4.6950</y-m>
+      <z-m>-0.6106</z-m>
+     <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>TiptrailL</name>
+    <path>Aircraft/L-159/Models/Effects/Tiptrail/TiptrailL.xml</path>
+    <offsets>
+      <x-m>1.7329</x-m>
+      <y-m>-4.6950</y-m>
+      <z-m>-0.6106</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+ 
+  <!-- smoke -->
+  <model>
+    <name>Smoke</name>
+    <path>Aircraft/L-159/Models/Effects/Smoke/Smoke.xml</path>
+    <offsets>
+      <x-m>5.2903</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.2311</z-m>
+    </offsets>
+  </model>
+  
+  <!-- contrail -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Contrail/Contrail.xml</path>
+    <offsets>
+      <x-m>9.0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.2311</z-m>
+    </offsets>
+  </model>
+  
+  <!-- heat haze -->
+  <model>
+    <name>HeatHaze</name>
+    <path>Aircraft/L-159/Models/Effects/HeatHaze/HeatHaze.xml</path>
+    <offsets>
+      <x-m>5.2903</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.2311</z-m>
+    </offsets>
+  </model>
+  
+  <!-- vapour -->
+  <model>
+    <name>VapourL</name>
+    <path>Aircraft/L-159/Models/Effects/Vapour/Vapour.xml</path>
+    <offsets>
+      <x-m>0.35</x-m>
+      <y-m>-1.15</y-m>
+      <z-m>-0.58</z-m>
+    </offsets>
+  </model>
+  <model>
+    <name>VapourR</name>
+    <path>Aircraft/L-159/Models/Effects/Vapour/Vapour.xml</path>
+    <offsets>
+      <x-m>0.35</x-m>
+      <y-m>1.15</y-m>
+      <z-m>-0.58</z-m>
+    </offsets>
+  </model>
+
+
+
+
+  <!-- Explosion -->
+  
+  <!-- Crash explosion -->
+  <model>
+  <path>Aircraft/L-159/Models/Effects/Explosion/Explode.xml</path>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+  </offsets>
+  </model>
+  
+  <!-- Impact fire -->
+  <model>
+  <path>Aircraft/L-159/Models/Effects/Explosion/ImpactFire.xml</path>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+  </offsets>
+  </model>
+  
+  <!-- Impact fire smoke -->
+  <model>
+  <path>Aircraft/L-159/Models/Effects/Explosion/ImpactFireSmoke.xml</path>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+    <heading-deg>0</heading-deg>
+  </offsets>
+  </model>
+  
+  <!-- Impact explosion and fire Rembrandt light -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Explosion/FireLightBig.xml</path>
+    <name>FireLightBig</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>translate</type>
+    <object-name>FireLightBig</object-name>
+    <expression>
+      <prod>
+        <value>25</value>
+        <sin><deg2rad><property>orientation/pitch-deg</property></deg2rad></sin>
+      </prod>
+    </expression>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>FireLightBig</object-name>
+    <expression>
+      <prod>
+        <value>25</value>
+        <cos><deg2rad><property>orientation/pitch-deg</property></deg2rad></cos>
+        <sin><deg2rad><property>orientation/roll-deg</property></deg2rad></sin>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>FireLightBig</object-name>
+    <expression>
+      <prod>
+        <value>25</value>
+        <cos><deg2rad><property>orientation/pitch-deg</property></deg2rad></cos>
+        <cos><deg2rad><property>orientation/roll-deg</property></deg2rad></cos>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+    
+  <!-- AB ALS shader effect -->
+  <!--><model>
+    <name>ABeffect</name>
+    <path>Aircraft/L-159/Models/Effects/ABtest/ABmodel.xml</path>
+    <condition>
+      <not>
+        <or>
+          <less-than>
+            <property>/sim/version/fg-major</property>
+            <value>3</value>
+          </less-than>
+          <less-than>
+            <property>/sim/version/fg-minor</property>
+            <value>5</value>
+          </less-than>
+        </or>
+      </not>
+    </condition>
+  </model><-->
+  
+</PropertyList>

@@ -1,4 +1,4 @@
-CURRENT VERSION:  0.7
+CURRENT VERSION: 0.8
 
 
 CHANGELOG:
@@ -93,7 +93,7 @@ Other:
 
 0.7 - 9.7.2014
 Animations, effects:
--Unique  disintegration animation on impact
+-Unique disintegration animation on impact
 -Impact explosion animation with fire and smoke
 -Slightly increased range of MP bullets animation
 -Everything so far mentioned works over MP
@@ -114,3 +114,29 @@ Systems:
 Other:
 -Fixed roll axis autopilot behavior
 -Aircraft help dialog updated
+
+
+0.7b - 25.8.2014
+Animations, effects:
+-Lights Nasal generalized (object-oriented)
+-Many minor lighting fixes
+-Landing and taxi lights fade in and out instead of immediate change
+
+0.8 - 27.05.2015
+Animations, effects:
+-Some lights tuning and code cleanup
+-Disintegration with explosion and fire
+-Contrail and all other non-emissive particle effects are now properly darker at low light conditions
+Model:
+-Minor landing & taxi lights shaping
+-Added formation lights
+-Some materials adjustments
+-Engine intake area reshape to be more flat, added chrome effect to the edge
+-Livery switching with 3 most common liveries (more to come in next release)
+Sound:
+-Removed artificial flyby sound
+Systems:
+-Added L-159-instructor, passive observer that can connect to any L-159. Active dual controls planned for next release. 
+Other:
+-Bombable support (with Bombable installation check)
+

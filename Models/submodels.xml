@@ -18,7 +18,9 @@
     <count>6000</count> <!-- expected durability: 6000 rounds -->
     <wind>false</wind>
     <collision>true</collision> <!-- Collision with models -->
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact> <!-- Ground impact  -->
+    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
     <submodel-path>Aircraft/L-159/Models/Effects/Guns/bullet-submodel.xml</submodel-path>
     <impact-reports>sim/ai/aircraft/impact/bullet</impact-reports>
     <pitch-offset>-2</pitch-offset>
@@ -44,7 +46,7 @@
   
   
   <submodel>
-    <name>Middle Plamen bullets - fast</name>
+    <name>Middle Plamen bullets - fast - cannon</name>
     <model alias="../../PlamenCannon/model"/>
     <trigger>/controls/armament/trigger-fastPlamenC</trigger>
     <speed alias="../../PlamenCannon/speed"/>
@@ -96,7 +98,7 @@
 
 
   <submodel>
-    <name>Middle Plamen bullets - slow</name>
+    <name>Middle Plamen bullets - slow - cannon</name>
     <model alias="../../PlamenCannon/model"/>
     <trigger>/controls/armament/trigger-slowPlamenC</trigger>
     <speed alias="../../PlamenCannon/speed"/>
@@ -149,7 +151,7 @@
 
 
   <submodel>
-    <name>Right Plamen bullets - fast</name>
+    <name>Right Plamen bullets - fast - cannon</name>
     <model alias="../../PlamenCannon/model"/>
     <trigger>/controls/armament/trigger-fastPlamenR</trigger>
     <speed alias="../../PlamenCannon/speed"/>
@@ -200,7 +202,7 @@
 
 
   <submodel>
-    <name>Right Plamen bullets - slow</name>
+    <name>Right Plamen bullets - slow - cannon</name>
     <model alias="../../PlamenCannon/model"/>
     <trigger>/controls/armament/trigger-slowPlamenR</trigger>
     <speed alias="../../PlamenCannon/speed"/>
@@ -252,7 +254,7 @@
 
 
   <submodel>
-    <name>Left Plamen bullets - fast</name>
+    <name>Left Plamen bullets - fast - cannon</name>
     <model alias="../../PlamenCannon/model"/>
     <trigger>/controls/armament/trigger-fastPlamenL</trigger>
     <speed alias="../../PlamenCannon/speed"/>
@@ -303,7 +305,7 @@
 
 
   <submodel>
-    <name>Left Plamen bullets - slow</name>
+    <name>Left Plamen bullets - slow - cannon</name>
     <model alias="../../PlamenCannon/model"/>
     <trigger>/controls/armament/trigger-slowPlamenL</trigger>
     <speed alias="../../PlamenCannon/speed"/>

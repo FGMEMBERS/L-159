@@ -305,33 +305,6 @@
       </volume>
     </voice> 
  
-    <!-- flyby -->
-    <flyby>
-      <name>fly-by</name>
-      <mode>once</mode>
-      <path>Aircraft/L-159/Sounds/fly-by.wav</path>
-      <condition>
-        <and>
-          <greater-than>
-            <property>/velocities/mach</property>
-            <value>0.6</value>
-          </greater-than>
-          <equals>
-            <property>sim/current-view/view-number</property>
-            <value>6</value>
-          </equals>
-        </and>
-        <not>
-          <property>/sim/current-view/internal</property>
-          <property>/engines/engine/out-of-fuel</property>
-        </not>
-      </condition>
-      <volume>
-        <property>velocities/airspeed-kt</property>
-        <factor>0.001</factor>
-      </volume>
-      
-    </flyby>
     
     <cannon>
       <name>Plamen Cannon fire</name>

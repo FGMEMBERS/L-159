@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Aero Vodochody L-159 ALCA (Advanced Light Combat Aircraft)
+Created and maintained by Tomáš Komárek
+************************************************************************
+-->
+<PropertyList>
+<sim include="Dialogs/Help.xml">
+  <description>Aero Vodochody L-159 ALCA</description>
+  <author>Tomaskom, Pjedvaj (3D model)</author>
+  <status>beta</status>
+
+  <startup>
+    <splash-texture>Aircraft/L-159/L-159_Splash.jpg</splash-texture>
+  </startup>
+
+  <flight-model>null</flight-model>
+  
+  <model>
+    <path>Aircraft/L-159/Models/L-159-instructor.xml</path>
+  </model>
+  
+
+  <rating>
+    <FDM type="int">4</FDM>
+    <systems type="int">1</systems>
+    <cockpit type="int">0</cockpit>
+    <model type="int">3</model>
+  </rating>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  
+  <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
+
+  <!-- Reposition view centers ([-7.2058,0,-1.0878] is nosetip)
+  YASim X,Y,Z are here Y,Z,X -->
+  <view n="0">
+    <internal type="bool" archive="y">true</internal>
+    <config>
+      <x-offset-m type="double" archive="y">0.00</x-offset-m>
+      <y-offset-m type="double" archive="y">0.30</y-offset-m>
+      <z-offset-m type="double" archive="y">-1.980</z-offset-m>
+      <pitch-offset-deg type="double">-7</pitch-offset-deg>
+      <default-field-of-view-deg type="double">112</default-field-of-view-deg>
+    </config>
+    <dynamic>
+      <enabled type="bool">0</enabled>
+    </dynamic>
+  </view>
+  <view n="1">
+    <config>
+      <target-z-offset-m archive="y" 
+      type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="2">
+    <config>
+    <target-z-offset-m archive="y" 
+    type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="3">
+    <config>
+    <target-z-offset-m archive="y" 
+    type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="4">
+    <config>
+    <target-z-offset-m archive="y" 
+    type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="5">
+    <config>
+    <target-z-offset-m archive="y" 
+    type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="6">
+    <config>
+    <target-z-offset-m archive="y" 
+    type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="7">
+    <config>
+    <target-z-offset-m archive="y" 
+    type="double">0.4</target-z-offset-m>
+      <target-y-offset-m archive="y" 
+      type="double">-0.3</target-y-offset-m>
+    </config>
+  </view>
+  <view n="100">
+    <name type="string">Pilot view</name>
+    <type>lookfrom</type>
+    <internal type="bool" archive="y">true</internal>
+    <config>
+      <x-offset-m type="double" archive="y">0.007</x-offset-m>
+      <y-offset-m type="double" archive="y">0.0</y-offset-m>
+      <z-offset-m type="double" archive="y">-3.30</z-offset-m>
+      <pitch-offset-deg  type="double">-7</pitch-offset-deg>
+      <default-field-of-view-deg  type="double">112</default-field-of-view-deg>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.5</ground-level-nearplane-m>
+      <limits>
+        <enabled type="bool">true</enabled>
+        <left>
+          <heading-max-deg type="double">140</heading-max-deg>
+          <x-offset-max-m type="double">0.15</x-offset-max-m>
+          <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+        </left>
+        <right>
+          <heading-max-deg type="double">140</heading-max-deg>
+          <x-offset-max-m type="double">0.15</x-offset-max-m>
+          <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+        </right>
+      </limits>
+    </config>
+    <dynamic>
+      <enabled type="bool">0</enabled>
+    </dynamic>
+    
+  </view>
+  
+  
+  <menubar>
+    <default>
+      <menu n="99">
+        <label>ALCA-instructor</label>
+        <enabled type="bool">true</enabled>
+        
+        <item>
+          <label>Select host aircraft</label>
+          <binding>
+            <command>nasal</command>
+            <script>instructor_pickHost.pickHost_dialog.show(instructor_pickHost.hostModel);</script>
+          </binding>
+        </item>
+      </menu>
+    </default>
+  </menubar>
+
+  
+</sim>
+
+<instructor>
+  <hide-me type="bool">true</hide-me>
+</instructor>
+
+
+<nasal>
+  <version>
+    <script>
+      var s = split(".", getprop("/sim/version/flightgear"));
+      props.globals.initNode("/sim/version/fg-major", s[0], "INT");
+      props.globals.initNode("/sim/version/fg-minor", s[1], "INT");
+    </script>
+  </version>
+  <preinit>
+    <file>Aircraft/L-159/Nasal/Preinit.nas</file>
+  </preinit>
+  <instructor>
+    <file>Aircraft/L-159/Nasal/Instructor.nas</file>
+  </instructor>
+  <instructor_pickHost>
+    <file>Aircraft/L-159/Nasal/Instructor-PickHost.nas</file>
+  </instructor_pickHost>
+  <lights>
+    <file>Aircraft/L-159/Nasal/Lights.nas</file>
+  </lights>
+  <explosion>
+    <file>Aircraft/L-159/Nasal/Explosion.nas</file>
+  </explosion>
+  <disintegration>
+    <file>Aircraft/L-159/Nasal/Disintegration.nas</file>
+  </disintegration>
+  <L159>
+    <file>Aircraft/L-159/Nasal/Instructor-Postinit.nas</file>
+  </L159>
+</nasal>
+
+</PropertyList>

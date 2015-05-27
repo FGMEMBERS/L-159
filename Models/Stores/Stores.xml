@@ -18,7 +18,7 @@
     <object-name>AIM-9_R</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[11]</property>
+        <property>sim/weight[1]/payload-int</property>
         <value>2</value>
       </equals>
     </condition>
@@ -38,7 +38,7 @@
     <object-name>railR</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[11]</property>
+        <property>sim/weight[1]/payload-int</property>
         <value>2</value>
       </equals>
     </condition>
@@ -59,7 +59,7 @@
     <object-name>AIM-9_L</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[17]</property>
+        <property>sim/weight[7]/payload-int</property>
         <value>2</value>
       </equals>
     </condition>
@@ -79,7 +79,7 @@
     <object-name>railL</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[17]</property>
+        <property>sim/weight[7]/payload-int</property>
         <value>2</value>
       </equals>
     </condition>
@@ -102,7 +102,7 @@
     <object-name>PlamenMid</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[14]</property>
+        <property>sim/weight[4]/payload-int</property>
         <value>3</value>
       </equals>
     </condition>
@@ -123,7 +123,7 @@
     <object-name>PlamenR</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>3</value>
       </equals>
     </condition>
@@ -144,7 +144,7 @@
     <object-name>PlamenL</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>3</value>
       </equals>
     </condition>
@@ -167,7 +167,7 @@
     <object-name>AGM65-R1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -187,7 +187,7 @@
     <object-name>AGM65-railR1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -208,7 +208,7 @@
     <object-name>AGM65-R2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[12]</property>
+        <property>sim/weight[2]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -228,7 +228,7 @@
     <object-name>AGM65-railR2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[12]</property>
+        <property>sim/weight[2]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -249,7 +249,7 @@
     <object-name>AGM65-L1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -269,7 +269,7 @@
     <object-name>AGM65-railL1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -290,7 +290,7 @@
     <object-name>AGM65-L2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[16]</property>
+        <property>sim/weight[6]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -310,7 +310,7 @@
     <object-name>AGM65-railL2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[16]</property>
+        <property>sim/weight[6]/payload-int</property>
         <value>4</value>
       </equals>
     </condition>
@@ -333,7 +333,7 @@
     <object-name>GBU12-R1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>5</value>
       </equals>
     </condition>
@@ -354,7 +354,7 @@
     <object-name>GBU12-R2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[12]</property>
+        <property>sim/weight[2]/payload-int</property>
         <value>5</value>
       </equals>
     </condition>
@@ -375,7 +375,7 @@
     <object-name>GBU12-L1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>5</value>
       </equals>
     </condition>
@@ -396,7 +396,7 @@
     <object-name>GBU12-L2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[16]</property>
+        <property>sim/weight[6]/payload-int</property>
         <value>5</value>
       </equals>
     </condition>
@@ -419,7 +419,7 @@
     <object-name>GBU16-R1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>6</value>
       </equals>
     </condition>
@@ -440,7 +440,7 @@
     <object-name>GBU16-L1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>6</value>
       </equals>
     </condition>
@@ -463,7 +463,7 @@
     <object-name>Mk82-R1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>7</value>
       </equals>
     </condition>
@@ -484,7 +484,7 @@
     <object-name>Mk82-R2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[12]</property>
+        <property>sim/weight[2]/payload-int</property>
         <value>7</value>
       </equals>
     </condition>
@@ -505,7 +505,7 @@
     <object-name>Mk82-R3</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[11]</property>
+        <property>sim/weight[1]/payload-int</property>
         <value>7</value>
       </equals>
     </condition>
@@ -526,7 +526,7 @@
     <object-name>Mk82-L1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>7</value>
       </equals>
     </condition>
@@ -547,7 +547,7 @@
     <object-name>Mk82-L2</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[16]</property>
+        <property>sim/weight[6]/payload-int</property>
         <value>7</value>
       </equals>
     </condition>
@@ -568,7 +568,7 @@
     <object-name>Mk82-L3</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[17]</property>
+        <property>sim/weight[7]/payload-int</property>
         <value>7</value>
       </equals>
     </condition>
@@ -591,7 +591,7 @@
     <object-name>Mk83-R1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>8</value>
       </equals>
     </condition>
@@ -612,7 +612,7 @@
     <object-name>Mk83-L1</object-name>      
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>8</value>
       </equals>
     </condition>
@@ -635,7 +635,7 @@
     <object-name>500l-R</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>10</value>
       </equals>
     </condition>
@@ -656,7 +656,7 @@
     <object-name>500l-L</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>10</value>
       </equals>
     </condition>
@@ -678,7 +678,7 @@
     <object-name>350l-R1</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[13]</property>
+        <property>sim/weight[3]/payload-int</property>
         <value>9</value>
       </equals>
     </condition>
@@ -699,7 +699,7 @@
     <object-name>350l-R2</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[12]</property>
+        <property>sim/weight[2]/payload-int</property>
         <value>9</value>
       </equals>
     </condition>
@@ -720,7 +720,7 @@
     <object-name>350l-L1</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[15]</property>
+        <property>sim/weight[5]/payload-int</property>
         <value>9</value>
       </equals>
     </condition>
@@ -741,11 +741,96 @@
     <object-name>350l-L2</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[16]</property>
+        <property>sim/weight[6]/payload-int</property>
         <value>9</value>
       </equals>
     </condition>
   </animation>
+  
+  <!-- Smokewinder -->
+  <model>
+    <name>Smokewinder_R</name>
+    <path>Aircraft/L-159/Models/Stores/Smokewinder/smokewinder.xml</path>
+    <offsets>
+      <x-m>-0.3223</x-m>
+      <y-m>3.4567</y-m>
+      <z-m>-1.1716</z-m>
+    <pitch-deg>-2.23</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>Smokewinder_R</object-name>      
+    <condition>
+      <equals>
+        <property>sim/weight[1]/payload-int</property>
+        <value>12</value>
+      </equals>
+    </condition>
+  </animation>
+  <model>
+    <name>SmokewinderRailR</name>
+    <path>Aircraft/L-159/Models/Stores/AIM-9_rail.xml</path>
+    <offsets>
+      <x-m>-0.3223</x-m>
+      <y-m>3.4567</y-m>
+      <z-m>-1.1086</z-m>
+    <pitch-deg>-2.23</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>SmokewinderRailR</object-name>      
+    <condition>
+      <equals>
+        <property>sim/weight[1]/payload-int</property>
+        <value>12</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <model>
+    <name>Smokewinder_L</name>
+    <path>Aircraft/L-159/Models/Stores/Smokewinder/smokewinder.xml</path>
+    <offsets>
+      <x-m>-0.3223</x-m>
+      <y-m>-3.4395</y-m>
+      <z-m>-1.1716</z-m>
+    <pitch-deg>-2.23</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>Smokewinder_L</object-name>      
+    <condition>
+      <equals>
+        <property>sim/weight[7]/payload-int</property>
+        <value>12</value>
+      </equals>
+    </condition>
+  </animation>
+  <model>
+    <name>SmokewinderRailL</name>
+    <path>Aircraft/L-159/Models/Stores/AIM-9_rail.xml</path>
+    <offsets>
+      <x-m>-0.3223</x-m>
+      <y-m>-3.4395</y-m>
+      <z-m>-1.1086</z-m>
+    <pitch-deg>-2.23</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>SmokewinderRailL</object-name>      
+    <condition>
+      <equals>
+        <property>sim/weight[7]/payload-int</property>
+        <value>12</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  
   
   <!-- Disintegration -->
   
@@ -1637,6 +1722,7 @@
     <name>R3</name>
     <object-name>AIM-9_R</object-name>
     <object-name>Mk82-R3</object-name>
+    <object-name>Smokewinder_R</object-name>
   </animation>
   <!-- X translate -->
   <animation>
@@ -1854,6 +1940,7 @@
     <name>L3</name>
     <object-name>AIM-9_L</object-name>
     <object-name>Mk82-L3</object-name>
+    <object-name>Smokewinder_L</object-name>
   </animation>
   <!-- X translate -->
   <animation>
@@ -2292,6 +2379,8 @@
     <object-name>AGM65-railR2</object-name>
     <object-name>AGM65-railL1</object-name>
     <object-name>AGM65-railL2</object-name>
+    <object-name>SmokewinderRailR</object-name>
+    <object-name>SmokewinderRailL</object-name>
     <condition>
       <not><property>sim/multiplay/generic/int[7]</property></not>
     </condition>
@@ -2300,6 +2389,447 @@
   
   
   
+  
+  <!-- Plamen cannon effects -->
+  
+  <!-- flames at barrel end -->
+  <!-- center-->
+  <model>
+    <name>PlamenC-flame1</name>
+    <path>Aircraft/L-159/Models/Effects/Guns/flame.xml</path>
+    <offsets>
+      <x-m>-3.9745</x-m>
+      <y-m>0.0373</y-m>
+      <z-m>-1.6355</z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>PlamenC-flame2</name>
+    <path>Aircraft/L-159/Models/Effects/Guns/flame.xml</path>
+    <offsets>
+      <x-m>-3.9745</x-m>
+      <y-m>-0.01990</y-m>
+      <z-m>-1.6355</z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenC-flame1</object-name>
+    <object-name>PlamenC-flame2</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[14]</property>
+          <value>3</value>
+        </equals>
+        <greater-than>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  <!-- right -->
+  <model>
+    <name>PlamenR-flame1</name>
+    <path>Aircraft/L-159/Models/Effects/Guns/flame.xml</path>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>2.0106</y-m>
+      <z-m>-1.40908</z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>PlamenR-flame2</name>
+    <path>Aircraft/L-159/Models/Effects/Guns/flame.xml</path>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>1.95340</y-m>
+      <z-m>-1.40908</z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenR-flame1</object-name>
+    <object-name>PlamenR-flame2</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[13]</property>
+          <value>3</value>
+        </equals>
+        <greater-than>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  <!-- left -->
+  <model>
+    <name>PlamenL-flame1</name>
+    <path>Aircraft/L-159/Models/Effects/Guns/flame.xml</path>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>-1.9936</y-m>
+      <z-m>-1.40908</z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>PlamenL-flame2</name>
+    <path>Aircraft/L-159/Models/Effects/Guns/flame.xml</path>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>-1.9364</y-m>
+      <z-m>-1.40908</z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenL-flame1</object-name>
+    <object-name>PlamenL-flame2</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[15]</property>
+          <value>3</value>
+        </equals>
+        <greater-than>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  <!-- cannon smoke -->
+  <!-- center-->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/smoke-fast.xml</path>
+    <name>PlamenC-smoke-fast</name>
+    <offsets>
+      <x-m>-3.9745</x-m>
+      <y-m>0.0087</y-m>
+      <z-m>-1.6355</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenC-smoke-fast</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[14]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>2</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  <!-- right -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/smoke-fast.xml</path>
+    <name>PlamenR-smoke-fast</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>1.9820</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenR-smoke-fast</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[13]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>2</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  <!-- left -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/smoke-fast.xml</path>
+    <name>PlamenL-smoke-fast</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>-1.9650</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenL-smoke-fast</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[15]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>2</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  <!-- center-->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/smoke-slow.xml</path>
+    <name>PlamenC-smoke-slow</name>
+    <offsets>
+      <x-m>-3.9745</x-m>
+      <y-m>0.0087</y-m>
+      <z-m>-1.6355</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenC-smoke-slow</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[14]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  <!-- right -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/smoke-slow.xml</path>
+    <name>PlamenR-smoke-slow</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>1.9820</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenR-smoke-slow</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[13]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  <!-- left -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/smoke-slow.xml</path>
+    <name>PlamenL-smoke-slow</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>-1.9650</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenL-smoke-slow</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[15]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  
+  
+  <!-- MP bullets done by particles -->
+  <!-- center-->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/MP-bullet-fast.xml</path>
+    <name>PlamenC-MP-fast</name>
+    <offsets>
+      <x-m>-3.9745</x-m>
+      <y-m>0.0087</y-m>
+      <z-m>-1.6355</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenC-MP-fast</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[14]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>2</value>
+        </equals>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
+  <!-- right -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/MP-bullet-fast.xml</path>
+    <name>PlamenR-MP-fast</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>1.9820</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenR-MP-fast</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[13]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>2</value>
+        </equals>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
+  <!-- left -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/MP-bullet-fast.xml</path>
+    <name>PlamenL-MP-fast</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>-1.9650</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenL-MP-fast</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[15]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>2</value>
+        </equals>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
+  <!-- center-->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/MP-bullet-slow.xml</path>
+    <name>PlamenC-MP-slow</name>
+    <offsets>
+      <x-m>-3.9745</x-m>
+      <y-m>0.0087</y-m>
+      <z-m>-1.6355</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenC-MP-slow</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[14]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>1</value>
+        </equals>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
+  <!-- right -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/MP-bullet-slow.xml</path>
+    <name>PlamenR-MP-slow</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>1.9820</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenR-MP-slow</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[13]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>1</value>
+        </equals>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
+  <!-- left -->
+  <model>
+    <path>Aircraft/L-159/Models/Effects/Guns/MP-bullet-slow.xml</path>
+    <name>PlamenL-MP-slow</name>
+    <offsets>
+      <x-m>-2.0940</x-m>
+      <y-m>-1.9650</y-m>
+      <z-m>-1.40908</z-m>
+    </offsets>
+  </model>
+  <animation>
+    <type>select</type>
+    <object-name>PlamenL-MP-slow</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>sim/multiplay/generic/int[15]</property>
+          <value>3</value>
+        </equals>
+        <equals>
+          <property>sim/multiplay/generic/int[6]</property>
+          <value>1</value>
+        </equals>
+        <property>sim/is-MP-Aircraft</property>
+      </and>
+    </condition>
+  </animation>
   
   
 </PropertyList>

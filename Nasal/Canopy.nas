@@ -16,4 +16,4 @@
 #    
 #setlistener("/controls/switches/canopy", canopy_toggle);
 
-var canopy = aircraft.door.new("/canopy", 5);
+var canopy = aircraft.door.new("/canopy", 8);

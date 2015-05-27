@@ -38,6 +38,10 @@ xsaint
     <pitch-deg>0</pitch-deg>
     <roll-deg>0</roll-deg>
   </offsets>
+  
+  <condition>
+    <property>disintegration/explosion/fire</property>
+  </condition>
 
   <attach>world</attach>
   

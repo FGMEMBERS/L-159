@@ -18,4 +18,6 @@ var globalChecks = func {
 }
 globalChecks();
 
+setprop("/sim/current-view/view-number", 0);
+setprop("/sim/current-view/field-of-view", getprop("/sim/view/config/default-field-of-view-deg"));
 

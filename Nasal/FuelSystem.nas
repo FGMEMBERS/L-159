@@ -8,8 +8,14 @@ var fuel_node = props.globals.getNode("/consumables/fuel");
 
 var engFeedN = 0; #number of tank which serves as engine feed
 
-var interval = 0.1; #transfer cycle interval
-var cycleAmmount = 0.15; #total ammount to be transferred in one cycle
+var interval = 0.1; #approximate transfer cycle interval
+var galsPerSec = 1.5; #fuel flow to engine feed tank (gal_us/sec)
+
+#delta times for exact flow rates
+var lastTime = getprop("/sim/time/elapsed-sec");
+
+#property for ground refueling
+var refuel_galsPerSec = 0;
 
 #class representing a fuel tank
 var fuelTank = {
@@ -66,14 +72,14 @@ var fuelTank = {
 	setEnable: func(enable) {
 		setprop("/consumables/fuel/tank["~me.tankNum~"]/selected", enable);
 	},
-	#set ammount of fuel (gal) to be dumped per minute - works only approximately, the real ammount is lower
+	#set amount of fuel (gal) to be dumped per sec
 	fuelDump: func(dumpAmmount) {
-		me.dump = dumpAmmount * interval / 60;
+		me.dump = dumpAmmount;
 	},
 	#perform dump, to be called during main loop
-	performDump: func {
+	performDump: func(dt) {
 		if(me.dump > 0) {
-			me.takeFuel(me.dump);
+			me.takeFuel(dt*me.dump);
 		}
 	},
 };
@@ -111,6 +117,62 @@ var tanks = [
 	fuelTank.new(11, 4),
 ];
 
+var doRefuel = func(dt) {
+	if( getprop("/gear/gear[0]/wow") 
+	and getprop("/gear/gear[1]/wow") 
+	and getprop("/gear/gear[2]/wow") 
+	and (getprop("/velocities/groundspeed-kt") < 2) ) {
+		#determine fuel to be allocated in this cycle
+		var refuelAmmount = refuel_galsPerSec * dt;
+		
+		var maxPrio = 0;
+		foreach(var tank; tanks) {
+			if(tank.getPriority() > maxPrio) maxPrio = tank.getPriority();
+		}
+
+		for(var iPrioGroup=0; iPrioGroup<=maxPrio; iPrioGroup+=1) {
+			var thisGroup = []; #print("refueling group "~iPrioGroup);
+			forindex(var iTank; tanks) {
+				if(tanks[iTank].getPriority() == iPrioGroup) {
+					append(thisGroup, {index:iTank, fuelLevel:tanks[iTank].getLevel()});
+					#print("appending tank "~iTank~" (prio="~iPrioGroup~")");
+				}
+			}
+			if(size(thisGroup) == 0) continue;
+			
+			#get previous array sorted - descending order
+			var sortedGroup = sort(thisGroup, 
+				func(h1, h2){return h1.fuelLevel-h2.fuelLevel;} );
+			
+			#try to push remaining available fuel and save overflow for next tanks
+			foreach(var iSorted; sortedGroup) {
+				#print("prerefuelAmmount: "~refuelAmmount);
+				refuelAmmount = tanks[iSorted.index].pushFuel(refuelAmmount);
+				#print("refuelAmmount:    "~refuelAmmount);
+			}
+		}
+		
+		if(refuelAmmount > 0) {
+			screen.log.write("Refueling finished, all mounted tanks are full. ", 1, 0.6, 0.1);
+			refuel_galsPerSec = 0;
+		}
+	}
+	else {
+		refuel_galsPerSec = 0;
+		screen.log.write("You must be stopped on the ground for refueling!", 1, 0.6, 0.1);
+	}
+}
+
+#function to be used externally to engage ground refuel - parameter sets flow in US gallons per second
+var refuel = func(fuelGalsPerSec) {
+	if(fuelGalsPerSec>0) {
+		refuel_galsPerSec = fuelGalsPerSec;
+	}
+	else {
+		refuel_galsPerSec = 0;
+	}
+}
+
 #cycle:
 #check how much fuel is missing in the Engine feed tank
 #check which highest priority still has fuel
@@ -118,6 +180,18 @@ var tanks = [
 #request balanced ammount of fuel from each tank (to keep levels equal)
 #store the fuel to the Engine feed tank
 var fuelTransfer = func {
+	#get delta time
+	var nowTime = getprop("/sim/time/elapsed-sec");
+	
+	var simSpeed = getprop("/sim/speed-up");
+	var dTime = (nowTime - lastTime) * simSpeed;
+	if(dTime < 0) dTime = 0;
+	
+	#try ground refuel
+	if(refuel_galsPerSec > 0) doRefuel(dTime);
+	
+	var cycleAmmount = galsPerSec * dTime;
+
 	#check how much fuel is missing in the Engine feed tank
 	var missingFuel = engineFeedTank.getCapacity() - engineFeedTank.getLevel();
 		
@@ -126,7 +200,7 @@ var fuelTransfer = func {
 	#check which highest priority still has fuel (and perform dump if tank is set to do it)
 	var maxNonemptyPrio = 0;
 	forindex(var i; tanks) {
-		tanks[i].performDump();
+		tanks[i].performDump(dTime);
 		if( tanks[i].getLevel() > 0 and tanks[i].getPriority() > maxNonemptyPrio ) {
 			maxNonemptyPrio = tanks[i].getPriority();
 		}
@@ -143,6 +217,7 @@ var fuelTransfer = func {
 	#skip loop if no tanks (eg. when not yet initialized on startup)
 	if(size(activeTanks) == 0) {
 		settimer(fuelTransfer, interval);
+		lastTime = nowTime;
 		return;
 	}
 	
@@ -195,13 +270,14 @@ var fuelTransfer = func {
 	}
 	engineFeedTank.pushFuel(transferedFuel);
 	
-	settimer(fuelTransfer, interval);
+	lastTime = nowTime;
+	
+	settimer(fuelTransfer, interval/simSpeed);
 }
 fuelTransfer();
 
 
-#Air-to-Air refueling - all tanks temporarily enabled when receiving fuel and disabled otherwise (except for Engine feed tank)
-#the "/systems/refuel/contact" property is probably repeatedly written to by the refuel script even if nothing changes - thanks to this, the listener is regularly called and I don't need to set up any other check to keep them in desired state
+#Air-to-Air refueling and tank enable control - all tanks temporarily enabled when receiving fuel and disabled otherwise (except for Engine feed tank)
 aarHandle = func {
 	if(getprop("/systems/refuel/contact")) {
 		foreach (var tank; tanks) {
@@ -214,7 +290,12 @@ aarHandle = func {
 		}
 	}
 }
-setlistener("/systems/refuel/contact", aarHandle);
+#set listener on the aar contact property
+setlistener("/systems/refuel/contact", aarHandle, 1, 0);
+#set listeners on all tanks enable property to counter manual changes
+foreach (var tank; tanks) {
+	setlistener("/consumables/fuel/tank["~tank.tankNum~"]/selected", aarHandle, 1, 0);
+}
 
 
 print("L-159 fuel system initialized");

@@ -22,6 +22,10 @@
 			<name>Shift-L</name>
 			<desc>Release chaff</desc>
 		</key>
+		<key>
+			<name>Shift-F</name>
+			<desc>Toggle smokewinders</desc>
+		</key>
 		
 		<line>Aero L-159 ALCA is a light combat aircraft and an advanced jet trainer designed and </line>
 		<line>made in the Czech Republic. The design is based on the L-59 Super Albatros. </line>

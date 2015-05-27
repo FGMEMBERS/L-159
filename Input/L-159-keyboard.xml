@@ -78,5 +78,14 @@
       </binding>
     </mod-up>
   </key>
+  
+  <key n="70">
+    <name>F</name>
+    <desc>Smokewinder smoke</desc>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/smokewinders</property>
+    </binding>
+  </key>
 
 </PropertyList>
