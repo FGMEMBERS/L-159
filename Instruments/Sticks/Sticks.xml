@@ -1,0 +1,99 @@
+﻿<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Primus 2000 MFD
+-->
+<PropertyList>
+
+    <path>Sticks2.ac</path>
+
+<animation>
+<name>Front_Stick</name>  
+  <object-name>stick_Fuselage1</object-name>
+  <object-name>stick00000_Tire</object-name>  
+</animation>  
+  
+<animation>
+<name>Rear_Stick</name>  
+  <object-name>stick_rear_Fuselage1</object-name>
+  <object-name>stick_re11_Tire</object-name>  
+</animation>    
+  
+<animation>
+  <type>rotate</type>
+    <object-name>Front_Stick</object-name>
+    <property>controls/flight/elevator</property>
+     <factor>10</factor>
+  <!--<offset-deg>25</offset-deg> -->
+ <center>
+   <x-m>-3.5225</x-m>
+   <y-m> -0.0017</y-m>
+   <z-m>-0.6138</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+    <object-name>Front_Stick</object-name>
+    <property>controls/flight/aileron</property>
+     <factor>10</factor>
+  <!--<offset-deg>25</offset-deg> -->
+ <center>
+   <x-m>-3.5225</x-m>
+   <y-m> -0.0017</y-m>
+   <z-m>-0.6138</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+    <object-name>Rear_Stick</object-name>
+    <property>controls/flight/elevator</property>
+     <factor>10</factor>
+  <!--<offset-deg>25</offset-deg> -->
+ <center>
+   <x-m>-2.2669</x-m>
+   <y-m>-0.0011</y-m>
+   <z-m> -0.4778</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+    <object-name>Rear_Stick</object-name>
+    <property>controls/flight/aileron</property>
+     <factor>10</factor>
+  <!--<offset-deg>25</offset-deg> -->
+ <center>
+   <x-m>-2.2669</x-m>
+   <y-m>-0.0011</y-m>
+   <z-m> -0.4778</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+ 
+</PropertyList>

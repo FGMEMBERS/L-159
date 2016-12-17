@@ -1,0 +1,74 @@
+﻿<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Primus 2000 MFD
+-->
+<PropertyList>
+
+    <path>Throttles_2.ac</path>
+  
+
+  <!-- Do the Throttle! -->
+  <!-- Plane Throttle -->
+<animation>
+  <name>throttle_group</name>
+    <object-name>throttle_Fuselage1</object-name>
+    <object-name>throttle00_Tire</object-name>
+    <!-- <object-name>throttle_b_Fuselage1</object-name> -->
+</animation>
+
+<animation>
+  <name>instructor_throttle</name>
+     <object-name>throttle_9_Tire</object-name>
+     <object-name>throttle_r_Fuselage1</object-name>
+</animation>
+
+<!-- Rear throttle components - not setting them to rotate now 
+    <object-name>throttle10_Fuselage1</object-name>
+    <object-name>throttle_9_Tire</object-name>
+    <object-name>throttle_r_Fuselage1</object-name> -->
+
+<animation>
+  <type>rotate</type>
+    <object-name>throttle_group</object-name>
+    <property>controls/engines/engine[0]/throttle</property>
+     <factor>100</factor>
+  <!--<offset-deg>25</offset-deg> -->
+ <center>
+   <x-m>-3.4086</x-m>
+   <y-m> -.2364</y-m>
+   <z-m> -.3281</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+    <object-name>instructor_throttle</object-name>
+    <property>controls/engines/engine[0]/throttle</property>
+     <factor>100</factor>
+  <!--<offset-deg>25</offset-deg> -->
+ <center>
+   <x-m>-2.1683</x-m>
+   <y-m> -.2490</y-m>
+   <z-m> -.1918</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<!--><path>Aircraft/Generic/Effects/Thruster/thrust_flame.ac</path><-->
+<path>Aircraft/L-159/Models/Effects/ABtest/ABmodel_Cylinder.ac</path>
+<nopreview/>
+
+<animation>
+<type>scale</type>
+<x-offset>0.65</x-offset>
+<y-offset>0.3125</y-offset>
+<z-offset>0.3333</z-offset>
+</animation>
+
+
+<!--><animation>
+  <type>scale</type>
+  <property>controls/engines/engine/throttle</property>
+  <x-min>0.0</x-min>
+  <y-min>1.0</y-min>
+  <z-min>1.0</z-min>
+  <x-factor>1.0</x-factor>
+  <y-factor>1.0</y-factor>
+  <z-factor>1.0</z-factor>
+  <center>
+   <x-m> 0 </x-m>
+   <y-m> 0 </y-m>
+   <z-m> 0 </z-m>
+  </center>
+ </animation><!-->
+
+<animation>
+<type>translate</type>
+  <offset-m>5.39</offset-m>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+<type>translate</type>
+  <offset-m>-0.72</offset-m>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+<type>translate</type>
+<offset-m>-0.13588</offset-m>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+</animation>
+
+<effect>
+<inherits-from>Aircraft/L-159/Models/Effects/ABtest/ABeffect</inherits-from>
+<object-name>Bounding_box</object-name>
+</effect>
+
+</PropertyList>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>AIM-9_rail.ac</path>
+
+        <offsets>
+      <x-m> 0</x-m>
+      <y-m> 0 </y-m>
+      <z-m>  0.2400 </z-m>
+      <pitch-deg>-2</pitch-deg>
+    </offsets>
+
+  <animation>
+    <object-name>rail</object-name>
+  </animation>
+
+</PropertyList>

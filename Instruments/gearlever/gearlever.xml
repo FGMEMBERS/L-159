@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>gearl.ac</path>
+
+  <animation>
+    <object-name>gearhandle.knob</object-name>
+    <object-name>gearhandle.knoblight</object-name>
+    <object-name>gearhandle.lever</object-name>
+  </animation>
+
+
+<!-- pick -->
+ <animation>
+  <type>rotate</type>
+    <object-name>gearhandle.knob</object-name>
+    <object-name>gearhandle.knoblight</object-name>
+    <object-name>gearhandle.lever</object-name>
+  <property>controls/gear/gear-down</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-35</dep>
+   </entry>
+  <entry>
+    <ind>1.00</ind>
+    <dep>50</dep>
+   </entry>
+  </interpolation>
+  <!--
+  <center>
+   <x-m>1.93441</x-m>
+   <y-m>0</y-m>
+   <z-m>0.25376</z-m>
+  </center> -->
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>gearhandle.knob</object-name>
+    <object-name>gearhandle.knoblight</object-name>
+    <object-name>gearhandle.lever</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/gear/gear-down</property>
+
+      </binding>
+    </action>
+ </animation>
+ 
+ <!--
+	
+	<animation>
+		<type>material</type>
+		<object-name>gearlever</object-name>
+		<object-name>base</object-name>
+		<emission>
+			<red>   0.2 </red>
+			<green> 0.2 </green>
+			<blue>  0.2 </blue>
+			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/flood-lights</property>
+				<value>0</value>
+			</greater-than>	
+		</condition>
+	</animation>  -->
+	
+	 <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+ 
+</PropertyList>
+
