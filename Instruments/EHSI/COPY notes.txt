@@ -1,0 +1,1 @@
+Note - You need the otto.nas file in the aircraft's nasal directory for the VS autopilot setting to work.  KB7, December 2016

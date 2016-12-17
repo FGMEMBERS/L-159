@@ -1,0 +1,662 @@
+﻿<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Primus 2000 MFD
+Extensive rebuild:  KB7
+Independent of Nasal and other instrumentation plugins, this directory should be all you need for this instrument.
+-->
+<PropertyList>
+
+    <path>mfd3dRac.ac</path>
+    
+  <animation>
+  <type>scale</type>
+  <x-offset>0.60</x-offset>
+  <y-offset>0.60</y-offset>
+  <z-offset>0.60</z-offset>
+ </animation>
+
+
+    <panel>
+        <name>panel-area</name>
+        <path>Aircraft/L-159/Models/Instruments/MFD/nd.xml</path>
+        <bottom-left>
+            <x-m>0.00025</x-m>
+            <y-m>-0.080</y-m>
+            <z-m>-0.080</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.00025</x-m>
+            <y-m>0.080</y-m>
+            <z-m>-0.080</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.00025</x-m>
+            <y-m>-0.080</y-m>
+            <z-m>0.108</z-m>
+        </top-left>
+    </panel>
+
+    <model>
+        <name>Mtext3d</name>
+        <path>Aircraft/L-159/Models/Instruments/MFD/Mtext3d.xml</path>
+        <offsets>
+            <x-m>0.005</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>MFD.hsi</object-name>
+        <property>orientation/heading-magnetic-deg</property>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+        <center>
+            <x>0.5</x>
+            <y>0.5</y>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.tcas-off</object-name>
+        <condition>
+            <not>
+                <property>instrumentation/primus2000/dc840/tcas</property>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MFD.hdg-bug</object-name>
+        <property>autopilot/internal/heading-bug-error-deg</property>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.018</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.vor</object-name>
+        <!--
+        <condition>
+            <property>instrumentation/primus2000/dc840/mfd-wx</property>
+        </condition>
+        -->
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.apt</object-name>
+        <!--
+        <condition>
+            <property>instrumentation/primus2000/dc840/mfd-wx</property>
+        </condition>
+        -->
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.hdg-bug</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>-55.0</value>
+                </greater-than>
+                <less-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>55.0</value>
+                </less-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Lhdg-arrow</object-name>
+        <condition>
+                <less-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>-55</value>
+                </less-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Rhdg-arrow</object-name>
+        <condition>
+                <greater-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>55</value>
+                </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.tcas-auto</object-name>
+        <condition>
+            <property>instrumentation/primus2000/dc840/tcas</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>MFD.menu</object-name>
+        <property>instrumentation/primus2000/mfd/menu-num</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MFD.plane</object-name>
+        <property>orientation/heading-magnetic-deg</property>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.018</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+        <animation>
+        <type>rotate</type>
+        <object-name>Plane.Line</object-name>
+        <property>orientation/heading-deg</property>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.018</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+            <animation>
+        <type>rotate</type>
+        <object-name>Plane.Line.001</object-name>
+        <property>orientation/heading-deg</property>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.018</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+<animation>
+<type>pick</type>
+<object-name>RNG.Clicker</object-name>
+   <action>
+     <button>0</button>
+     <repeatable>false</repeatable>
+     <binding>
+             <command>property-adjust</command>
+        <property>instrumentation/nd/range</property>
+          <step>40</step>
+          <min>40</min>
+          <max>100</max>
+          <wrap>true</wrap>
+     </binding>
+</action>
+</animation>  
+  
+  
+  <animation>
+      <type>select</type>
+      <object-name>MFD.staticplane</object-name>
+      <condition>
+      <equals>
+      <property>instrumentation/bogus/madeup</property>
+      <value>YEPWHYNOT</value>
+      </equals>
+      </condition>  
+  </animation>
+  
+  <animation>
+		<type>rotate</type>
+		<object-name>Arrow.Wind</object-name>
+		<property>environment/wind-from-heading-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+  <animation>
+		<type>rotate</type>
+		<object-name>Arrow.GPS</object-name>
+		<property>autopilot/route-manager/wp/bearing-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+	<animation>
+	   <type>select</type>
+	   <object-name>Arrow.GPS</object-name>
+	   <condition>
+	     <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+      </equals>
+	   </condition>
+	</animation>
+ <animation>
+		<type>rotate</type>
+		<object-name>MFD.GPSpip</object-name>
+		<property>autopilot/route-manager/route/wp/leg-bearing-true-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+		<animation>
+	   <type>select</type>
+	   <object-name>MFD.GPSpip</object-name>
+	   <condition>
+	     <equals>
+         <property>bogus/bogusMFD</property>
+         <value>YEAHWHYNOT</value>
+      </equals>
+	   </condition>
+	</animation>
+	
+  <animation>
+		<type>rotate</type>
+		<object-name>Arrow.NAV1</object-name>
+		<property>instrumentation/nav[0]/heading-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+		<animation>
+	   <type>select</type>
+	   <object-name>Arrow.NAV1</object-name>
+	   <condition>
+	     <and>
+  	     <equals>
+           <property>instrumentation/nav[0]/in-range</property>
+           <value>1</value>
+        </equals>
+  	     <equals>
+           <property>instrumentation/nav[0]/power-btn</property>
+           <value>1</value>
+        </equals>
+     </and>
+	   </condition>
+	</animation>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Arrow.NAV11</object-name>
+		<property>instrumentation/nav[0]/radials/selected-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>MFD.NAV1pip</object-name>
+		<property>instrumentation/nav[0]/radials/actual-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+			<animation>
+	   <type>select</type>
+	   <object-name>MFD.NAV1pip</object-name>
+	   <condition>
+	     <and>
+  	     <equals>
+           <property>instrumentation/nav[0]/in-range</property>
+           <value>1</value>
+        </equals>
+  	     <equals>
+           <property>instrumentation/nav[0]/power-btn</property>
+           <value>1</value>
+        </equals>
+     </and>
+	   </condition>
+	</animation>
+		<animation>
+		<type>rotate</type>
+		<object-name>MFD.NAV1cross</object-name>
+		<property>instrumentation/nav[0]/radials/actual-deg</property>
+		<offset-deg>180</offset-deg>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+				<animation>
+	   <type>select</type>
+	   <object-name>MFD.NAV1cross</object-name>
+	   <condition>
+	     <and>
+  	     <equals>
+           <property>instrumentation/nav[0]/in-range</property>
+           <value>1</value>
+        </equals>
+  	     <equals>
+           <property>instrumentation/nav[0]/power-btn</property>
+           <value>1</value>
+        </equals>
+     </and>
+	   </condition>
+	</animation>
+	
+  <animation>
+		<type>rotate</type>
+		<object-name>Arrow.NAV2</object-name>
+		<property>instrumentation/nav[1]/heading-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+			<animation>
+	   <type>select</type>
+	   <object-name>Arrow.NAV2</object-name>
+	   <condition>
+	     <and>
+  	     <equals>
+           <property>instrumentation/nav[1]/in-range</property>
+           <value>1</value>
+        </equals>
+  	     <equals>
+           <property>instrumentation/nav[1]/power-btn</property>
+           <value>1</value>
+        </equals>
+     </and>
+	   </condition>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Arrow.NAV21</object-name>
+		<property>instrumentation/nav[1]/radials/selected-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>MFD.NAV2pip</object-name>
+		<property>instrumentation/nav[1]/radials/actual-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+		<animation>
+		<type>rotate</type>
+		<object-name>MFD.NAV2cross</object-name>
+		<property>instrumentation/nav[1]/radials/actual-deg</property>
+    <offset-deg>180</offset-deg>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>MFD.HDGpip</object-name>
+		<property>autopilot/settings/heading-bug-deg</property>
+		<!-- <offset-deg>180</offset-deg> -->
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+		<animation>
+		<type>rotate</type>
+		<object-name>MFD.HDGcross</object-name>
+		<property>autopilot/settings/heading-bug-deg</property>
+<offset-deg>180</offset-deg>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+		<animation>
+	   <type>select</type>
+	   <object-name>MFD.NAV2pip</object-name>
+	   <condition>
+	     <and>
+  	     <equals>
+           <property>instrumentation/nav[1]/in-range</property>
+           <value>1</value>
+        </equals>
+  	     <equals>
+           <property>instrumentation/nav[1]/power-btn</property>
+           <value>1</value>
+        </equals>
+     </and>
+	   </condition>
+	</animation>
+			<animation>
+	   <type>select</type>
+	   <object-name>MFD.NAV2cross</object-name>
+	   <condition>
+	     <and>
+  	     <equals>
+           <property>instrumentation/nav[1]/in-range</property>
+           <value>1</value>
+        </equals>
+  	     <equals>
+           <property>instrumentation/nav[1]/power-btn</property>
+           <value>1</value>
+        </equals>
+     </and>
+	   </condition>
+	</animation>
+	
+
+  <animation>
+  <type>material</type>
+  <object-name>Arrow.GPS</object-name>
+  <object-name>Arrow.GPS1</object-name>
+  <object-name>MFD.GPSpip</object-name>
+   <emission>
+     <red>0.95</red>
+     <green>0.01</green>
+     <blue>0.95</blue>
+     <!--
+    <factor-prop>controls/lighting/instruments-norm</factor-prop> -->
+     </emission> 
+ </animation>
+ <animation>
+  <type>material</type>
+  <object-name>Arrow.NAV1</object-name>
+  <object-name>Arrow.NAV11</object-name>
+  <object-name>MFD.NAV1pip</object-name>
+    <object-name>MFD.NAV1cross</object-name>
+   <emission>
+     <red>0.01</red>
+     <green>0.95</green>
+     <blue>0.052</blue>
+     <!--
+    <factor-prop>controls/lighting/instruments-norm</factor-prop> -->
+   </emission> 
+ </animation>  
+ <animation>
+  <type>material</type>
+  <object-name>Arrow.NAV2</object-name>
+  <object-name>Arrow.NAV21</object-name>
+  <object-name>MFD.NAV2pip</object-name>
+    <object-name>MFD.NAV2cross</object-name>
+   <emission>
+     <red>0.01</red>
+     <green>0.52</green>
+     <blue>0.95</blue>
+     <!--
+    <factor-prop>controls/lighting/instruments-norm</factor-prop> -->
+   </emission> 
+ </animation>
+   <animation>
+  <type>material</type>
+  <object-name>Arrow.Wind</object-name>
+   <emission>
+     <red>0.95</red>
+     <green>0.95</green>
+     <blue>0.95</blue>
+     <!--
+    <factor-prop>controls/lighting/instruments-norm</factor-prop> -->
+   </emission> 
+ </animation>  
+   <animation>
+  <type>material</type>
+  <object-name>MDF.HDGpip</object-name>
+    <object-name>MDF.HDGcross</object-name>
+    <object-name>Plane.Line</object-name>
+    <object-name>Plane.Line.001</object-name>
+   <emission>
+     <red>0.95</red>
+     <green>0.95</green>
+     <blue>0.95</blue>
+     <!--
+    <factor-prop>controls/lighting/instruments-norm</factor-prop> -->
+   </emission> 
+ </animation> 
+ 
+ <animation>
+<type>select</type>
+<object-name>MFD.trunorth</object-name>
+     <condition>
+       <equals>
+         <property>bogus/mfd</property>
+         <value>YEAHWHYNOT</value>
+       </equals>
+     </condition>
+</animation>
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+ 
+</PropertyList>

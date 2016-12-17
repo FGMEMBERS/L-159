@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+
+<PropertyList>
+
+  <path>lightswitch6E.ac</path>
+
+   <animation>
+  <type>scale</type>
+  <x-offset>0.55</x-offset>
+  <y-offset>0.55</y-offset>
+  <z-offset>0.55</z-offset>
+ </animation>
+
+  <animation>
+  <!-- Switch.004 = Instruments, Switch = Beacon, Switch.001 = Navigation, Switch.002 = Landing, Switch.003 = Taxi, Knob.FORM = Formation -->
+    <object-name>Switch.004</object-name>
+    <object-name>Switch</object-name>
+    <object-name>Switch.001</object-name>
+    <object-name>Switch.002</object-name>
+    <object-name>Switch.003</object-name>
+    <object-name>Knob.FORM</object-name>
+    <object-name>info.004</object-name>
+    <object-name>info</object-name>
+    <object-name>info.001</object-name>
+    <object-name>info.002</object-name>
+    <object-name>info.003</object-name>
+    <object-name>info.005</object-name>
+    <object-name>base.004</object-name>
+    <object-name>base</object-name>
+    <object-name>base.001</object-name>
+    <object-name>base.002</object-name>
+    <object-name>base.003</object-name>
+  </animation>
+
+<!-- Switch.004, Instrument Lighting -->
+  <animation>
+    <type>material</type>
+    <object-name>Switch.004</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Switch.004</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/instrument-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Switch.004</object-name>
+    <property>/controls/lighting/instrument-lights</property>
+    <factor> 35 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!-- Switch, Beacon Light -->
+  <animation>
+    <type>material</type>
+    <object-name>Switch</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <emission>
+      <red>   0.75 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    <!--  <factor-prop>/systems/electrical/outputs/beacon-lights</factor-prop> -->
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Switch</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/beacon-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+      </binding>
+      <binding>
+        <command>dialog-update</command>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Switch</object-name>
+    <property>/controls/lighting/beacon-switch</property>
+    <factor> 35 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!-- Switch.001, Navigation Lights -->
+  <animation>
+    <type>material</type>
+    <object-name>Switch.001</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Switch.001</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/nav-lights-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Switch.001</object-name>
+    <property>/controls/lighting/nav-lights-switch</property>
+    <factor> 35 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!-- Switch.003, Taxi Lights -->
+  <animation>
+    <type>material</type>
+    <object-name>Switch.003</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Switch.003</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/probe-light-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/taxi-light-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Switch.003</object-name>
+    <property>/controls/lighting/taxi-light-switch</property>
+    <factor> 35 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!-- Switch.002, Landing Lighting -->
+  <animation>
+    <type>material</type>
+    <object-name>Switch.002</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Switch.002</object-name>
+    <object-name>base</object-name>
+    <object-name>info</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/landing-lights-switch</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Switch.002</object-name>
+    <property>/controls/lighting/landing-lights-switch</property>
+    <factor> 35 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Knob.FORM, Formation Lights -->
+    <animation>
+        <type>pick</type>
+        <object-name>Knob.FORM</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/sim/multiplay/generic/float[5]</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+            <type>pick</type>
+        <object-name>Knob.FORM</object-name>
+        <action>
+            <button>2</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/sim/multiplay/generic/float[5]</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>    
+    
+     <animation>
+            <type>pick</type>
+        <object-name>Knob.FORM</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/sim/multiplay/generic/float[5]</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>    
+    
+    <animation>
+            <type>pick</type>
+        <object-name>Knob.FORM</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>-0.05</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>/sim/multiplay/generic/float[5]</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>    
+    
+    <!--
+    <animation>
+        <type>rotate</type>
+        <object-name>Knob.FORM</object-name>
+        <property>/sim/multiplay/generic/float[5]</property>
+        <factor>330</factor>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+-->
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+</PropertyList>

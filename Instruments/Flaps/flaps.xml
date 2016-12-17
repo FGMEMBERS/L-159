@@ -1,0 +1,197 @@
+﻿<?xml version="1.0"?>
+
+<!-- OV-10 flap position indicator, by Dave Culp -->
+
+<PropertyList>
+
+ <path>flaps.ac</path>
+
+    <animation>
+  <type>scale</type>
+  <x-offset>0.70</x-offset>
+  <y-offset>0.70</y-offset>
+  <z-offset>0.70</z-offset>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>face</object-name>
+  <object-name>needle</object-name>
+      <!-- <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+   <emission>
+     <red>0.6</red>
+     <green>0.3</green>
+     <blue>0.3</blue>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+   </emission> 
+ </animation> -->
+  <condition>
+  <and>
+  <equals>
+     <property>sim/rendering/rembrandt/enabled</property>
+     <value>0</value>
+  </equals>
+   <equals>
+    <property>/controls/switches/redwhite/switch</property>
+    <value>1</value>
+   </equals>
+   </and>
+  </condition>
+    <emission>
+      <red>   0.035 </red>
+      <green> 0.012 </green>
+      <blue>  0.007 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation> 
+
+<animation>
+  <type>material</type>
+  <object-name>face</object-name>
+  <object-name>needle</object-name>
+      <!-- <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+   <emission>
+     <red>0.6</red>
+     <green>0.3</green>
+     <blue>0.3</blue>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+   </emission> 
+ </animation> -->
+   <condition>
+  <and>
+  <equals>
+     <property>sim/rendering/rembrandt/enabled</property>
+     <value>0</value>
+  </equals>
+   <equals>
+    <property>/controls/switches/redwhite/switch</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+    <emission>
+      <red>   0.07 </red>
+      <green> 0.04 </green>
+      <blue>  0.04 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+  
+  <animation>
+  <type>material</type>
+  <object-name>needle</object-name>
+      <!-- <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+   <emission>
+     <red>0.6</red>
+     <green>0.3</green>
+     <blue>0.3</blue>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+   </emission> 
+ </animation>
+   <condition>
+  <and>
+  <equals>
+     <property>sim/rendering/rembrandt/enabled</property>
+     <value>0</value>
+  </equals>
+   <equals>
+    <property>/controls/switches/redwhite/switch</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+  -->
+    <emission>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+      <!--
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop> -->
+    </emission>
+  </animation>
+  
+    <animation>
+  <type>material</type>
+  <object-name>face</object-name>
+      <!-- <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+   <emission>
+     <red>0.6</red>
+     <green>0.3</green>
+     <blue>0.3</blue>
+    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+   </emission> 
+ </animation>
+   <condition>
+  <and>
+  <equals>
+     <property>sim/rendering/rembrandt/enabled</property>
+     <value>0</value>
+  </equals>
+   <equals>
+    <property>/controls/switches/redwhite/switch</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+  -->
+    <emission>
+      <red>   0.3 </red>
+      <green> 0.3 </green>
+      <blue>  0.3 </blue>
+      <!--
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop> -->
+    </emission>
+  </animation>
+ 
+  <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  
+   <interpolation>
+      <entry><ind>     0 </ind><dep>   000 </dep></entry>
+      <entry><ind>  0.566 </ind><dep> 045 </dep></entry>
+      <entry><ind>  1 </ind><dep>  080 </dep></entry>
+      
+      <!-- <entry><ind>  855 </ind><dep>  78 </dep></entry>
+      <entry><ind>  1140 </ind><dep> 105 </dep></entry>
+      <entry><ind>  1425 </ind><dep> 131 </dep></entry>
+      <entry><ind>  1710 </ind><dep> 157 </dep></entry>
+      <entry><ind>  1995 </ind><dep> 181 </dep></entry>
+      <entry><ind>  2280 </ind><dep> 206 </dep></entry>
+      <entry><ind>  2565 </ind><dep> 231 </dep></entry>
+      <entry><ind> 2850 </ind><dep> 257 </dep></entry> -->
+    </interpolation> 
+  <!--
+  <factor>90</factor>  -->
+  <center>
+   <x-m>-0.02</x-m>
+   <y-m>-0.005</y-m>
+   <z-m>0.008225</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation> 
+
+
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+
+
+</PropertyList>

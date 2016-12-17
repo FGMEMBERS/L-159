@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- nav lights -->
+  <model>
+    <name>GreenLight</name>
+    <path>Aircraft/L-159/Models/Lights/GreenLight.xml</path>
+    <offsets>
+      <x-m>-1.4150</x-m>
+      <y-m>4.9465</y-m>
+      <z-m>-0.5536</z-m>
+      <roll-deg>-90</roll-deg>
+      <pitch-deg>-5</pitch-deg> <!-- due to roll, this tunes heading - I want it to point 5 deg more forward -->
+    </offsets>
+  </model>
+  <model>
+    <name>RedLight</name>
+    <path>Aircraft/L-159/Models/Lights/RedLight.xml</path>
+    <offsets>
+      <x-m>-1.4170</x-m>
+      <y-m>-4.9283</y-m>
+      <z-m>-0.5514</z-m>
+      <roll-deg>90</roll-deg>
+      <pitch-deg>-5</pitch-deg> <!-- due to roll, this tunes heading - I want it to point 5 deg more forward -->
+    </offsets>
+  </model>
+  
+  <!-- beacon -->
+  <model>
+    <name>Beacon1</name>
+    <path>Aircraft/L-159/Models/Lights/Beacon.xml</path>
+    <offsets>
+      <x-m>0.4768</x-m>
+      <y-m>0.0120</y-m>
+      <z-m>0.8762</z-m>
+      <pitch-deg>6</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>Beacon2</name>
+    <path>Aircraft/L-159/Models/Lights/Beacon.xml</path>
+    <offsets>
+      <x-m>3.3057</x-m>
+      <y-m>0.0102</y-m>
+      <z-m>-0.5794</z-m>
+      <pitch-deg>174</pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- landing lights -->
+  <model>
+    <name>LandingLight1</name>
+    <path>Aircraft/L-159/Models/Lights/LandingLight.xml</path>
+    <offsets>
+      <x-m>-1.73310</x-m>
+      <y-m>4.7236</y-m>
+      <z-m>-0.5623</z-m>
+      <pitch-deg>-5.7</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>LandingLight2</name>
+    <path>Aircraft/L-159/Models/Lights/LandingLight.xml</path>
+    <offsets>
+      <x-m>-1.7225</x-m>
+      <y-m>-4.7012</y-m>
+      <z-m>-0.5667</z-m>
+      <pitch-deg>-5.7</pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- taxi light -->
+  <model>
+    <name>TaxiLight</name>
+    <path>Aircraft/L-159/Models/Lights/TaxiLight.xml</path>
+    <offsets>
+      <x-m>-4.5</x-m>
+      <y-m>0.0179</y-m>
+      <z-m>-1.5863</z-m>
+      <pitch-deg>-1.5</pitch-deg>
+    </offsets>
+  </model>
+  <!-- front gear turning: include TaxiLight in the list of animated objects in the rotate animation of the gear in the top-level model XML file -->
+  <!-- retracted gear makes it dissapear - use only if mounted on front gear -->
+  <animation>
+    <type>select</type>
+    <object-name>TaxiLight</object-name>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <!-- probe light --> 
+  <!-- this is best included in the probe model xml file, not here - just an example -->
+  <!--><model>
+    <path>Aircraft/L-159/Models/Lights/ProbeLight.xml</path>
+    <offsets>
+      <x-m>-4.4867</x-m>
+      <y-m>0.4922</y-m>
+      <z-m>-0.4929</z-m>
+    </offsets>
+  </model><-->
+  
+  <!-- strobes -->
+  <model>
+    <name>Strobe2</name>
+    <path>Aircraft/L-159/Models/Lights/Strobe.xml</path>
+    <offsets>
+      <x-m>-1.3412</x-m>
+      <y-m>4.8970</y-m>
+      <z-m>-0.7380</z-m>
+      <roll-deg>-90</roll-deg>
+      <pitch-deg>-3</pitch-deg> <!-- due to roll, this tunes heading - I want it to point 3 deg more forward -->
+    </offsets>
+  </model>
+  <model>
+    <name>Strobe1</name>
+    <path>Aircraft/L-159/Models/Lights/Strobe.xml</path>
+    <offsets>
+      <x-m>-1.3412</x-m>
+      <y-m>-4.8797</y-m>
+      <z-m>-0.7380</z-m>
+      <roll-deg>90</roll-deg>
+      <pitch-deg>-3</pitch-deg> <!-- due to roll, this tunes heading - I want it to point 3 deg more forward -->
+    </offsets>
+  </model>
+  
+  <!-- white light -->
+  <model>
+    <name>WhiteLight</name>
+    <path>Aircraft/L-159/Models/Lights/WhiteLight.xml</path>
+    <offsets>
+      <x-m>5.81421</x-m>
+      <y-m>0.00868</y-m>
+      <z-m>2.78899</z-m>
+      <pitch-deg>93</pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

@@ -1,0 +1,1500 @@
+﻿<PropertyList>
+
+<text>
+        <name>MagHdg</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.002</y-m>
+            <z-m>0.104</z-m>
+            <!-- Need something to roll it slightly toward the viewer<roll-deg>45</roll-deg>-->
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">number-value</type>
+        <property>orientation/heading-magnetic-deg</property>
+        <format>%03.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.008</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+<text>
+        <name>HDGannun</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.067</y-m>
+            <z-m>0.095</z-m>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">number-value</type>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <format>%03.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>Nav-src</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.102</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">NAV1</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Hdg-src</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.102</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+       <text type="string">HDG</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Gps-src</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.102</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+       <text type="string">GPS</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Wing-src</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.102</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+       <text type="string">ROLL</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+<animation>
+<type>select</type>
+<object-name>Nav-src</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>nav1-hold</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Hdg-src</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>dg-heading-hold</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-src</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>true-heading-hold</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Wing-src</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>wing-leveler</value>
+       </equals>
+     </condition>
+</animation>
+    <text>
+        <name>Gps-dst</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.095</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>autopilot/route-manager/wp/dist</property>
+        <format>%3.0fNM</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+          <text>
+        <name>Gps-nosrc</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.067</y-m>
+            <z-m>0.0128</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">INAC RTE</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>Gps-from</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.067</y-m>
+            <z-m>0.0362</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">text-value</type>
+    <property type="string">/autopilot/route-manager/departure/airport</property>
+    <format type="string">%s</format> 
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>Gps-to</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.067</y-m>
+            <z-m>0.0245</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+    <type type="string">text-value</type>
+    <property type="string">/autopilot/route-manager/destination/airport</property>
+    <format type="string">%s</format> 
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Gps-rem-dst</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>-0.067</y-m>
+            <z-m>0.0128</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>autopilot/route-manager/distance-remaining-nm</property>
+        <format>%3.0fNM</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Gps-rem-eta</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>-0.067</y-m>
+            <z-m>0.0011</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>autopilot/route-manager/ete</property>
+                <format>%5.0fs</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>Nav-dst</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.095</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav/nav-distance</property>
+        <format>%3.0fm</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+<animation>
+<type>select</type>
+<object-name>Nav-dst</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>nav1-hold</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/dme-in-range</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-dst</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>true-heading-hold</value>
+       </equals>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+
+
+
+<animation>
+<type>select</type>
+<object-name>Gps-from</object-name>
+     <condition>
+       <not>
+       <equals>
+         <property>/autopilot/route-manager/departure/airport</property>
+         <value></value>
+       </equals>
+       </not>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-to</object-name>
+     <condition>
+       <not>
+       <equals>
+         <property>/autopilot/route-manager/destination/airport</property>
+         <value></value>
+       </equals>
+       </not>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-rem-dst</object-name>
+<object-name>Gps-rem-eta</object-name>
+     <condition>
+     <!--
+     <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>true-heading-hold</value>
+       </equals>
+       -->
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+    <!--   </and> -->
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-nosrc</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>0</value>
+       </equals>
+     </condition>
+</animation>
+
+
+    <text>
+        <name>Nav-id</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.088</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>instrumentation/nav[0]/nav-id</property>
+        <format>%0.5s</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+      <text>
+        <name>Gps-id</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.088</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>autopilot/route-manager/wp/id</property>
+        <format>%0.5s</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <animation>
+<type>select</type>
+<object-name>Nav-id</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>nav1-hold</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+        </equals>
+        <equals>
+          <property>instrumentation/nav[0]/in-range</property>
+          <value>1</value>
+        </equals>
+     </and>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-id</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>true-heading-hold</value>
+       </equals>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+
+    <text>
+        <name>Nav-ttw</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.081</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav[0]/time-to-intercept-sec</property>
+        <format>%5.0fs</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Gps-ttw</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.073</y-m>
+            <z-m>0.081</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>autopilot/route-manager/wp/eta</property>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.006</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <animation>
+<type>select</type>
+<object-name>Nav-ttw</object-name>
+     <condition>
+       <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>nav1-hold</value>
+       </equals>
+       <greater-than-equals>
+         <property>velocities/groundspeed-kt</property>
+         <value>40</value>
+       </greater-than-equals>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>Gps-ttw</object-name>
+     <condition>
+       <and>
+       <equals>
+         <property>autopilot/locks/heading</property>
+         <value>true-heading-hold</value>
+       </equals>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+        <value>1</value>
+      </equals>
+      </and>
+     </condition>
+</animation>
+
+    <text>
+        <name>SAT</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.071</y-m>
+            <z-m>-0.023</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>environment/temperature-degc</property>
+        <format>%02.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>TAS</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.071</y-m>
+            <z-m>-0.028</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/airspeed-indicator/true-speed-kt</property>
+        <format>%3.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>GSPD</name>
+        <offsets>
+            <x-m>0.000</x-m>
+            <y-m>0.071</y-m>
+            <z-m>-0.033</z-m>
+        </offsets>
+        <alignment>right-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>velocities/groundspeed-kt</property>
+        <format>%03.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+
+    <text>
+        <name>RNG1</name>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>-0.032</y-m>
+            <z-m>0.022</z-m>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+            <type type="string">literal</type>
+           <text type="string">W</text>
+           <!--
+        <type>number-value</type>
+        <property>instrumentation/nd/range</property>
+            -->
+        <scale>0.5</scale>
+        <format>%3.1f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>S</name>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.00</y-m>
+            <z-m>-0.0120</z-m>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+            <type type="string">literal</type>
+           <text type="string">S</text>
+<!--
+        <type>number-value</type>
+        <property>instrumentation/nd/range</property>
+-->
+        <scale>0.5</scale>
+        <format>%3.1f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>RNG2</name>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.036</y-m>
+            <z-m>0.022</z-m>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+            <type type="string">literal</type>
+           <text type="string">E</text>
+<!--
+        <type>number-value</type>
+        <property>instrumentation/nd/range</property>
+-->
+        <scale>0.5</scale>
+        <format>%3.1f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    
+    <text>
+       <name>WINDSPEED</name>
+       <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.000</y-m>
+            <z-m>0.0720</z-m>
+       </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>environment/wind-speed-kt</property>
+        <scale>1</scale>
+        <format>%2.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+  <animation>
+		<type>rotate</type>
+		<object-name>WINDSPEED</object-name>
+		<property>environment/wind-from-heading-deg</property>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m> .0180</z-m>
+		</center>
+	</animation>
+	    <text>
+       <name>WINDSPEED2</name>
+       <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.000</y-m>
+            <z-m>0.0720</z-m>
+       </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>environment/wind-speed-kt</property>
+        <scale>1</scale>
+        <format>%2.0f</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.2</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <animation>
+      <type>select</type>
+      <object-name>WINDSPEED2</object-name>
+        <condition>
+            <and>
+              <greater-than-equals>
+                <property>environment/wind-from-heading-deg</property>
+                <value>30</value>
+              </greater-than-equals>
+              <less-than-equals>
+                <property>environment/wind-from-heading-deg</property>
+                <value>330</value>
+              </less-than-equals>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+      <type>select</type>
+      <object-name>WINDSPEED</object-name>
+        <condition>
+        <not>
+            <and>
+              <greater-than-equals>
+                <property>environment/wind-from-heading-deg</property>
+                <value>135</value>
+              </greater-than-equals>
+              <less-than-equals>
+                <property>environment/wind-from-heading-deg</property>
+                <value>225</value>
+              </less-than-equals>
+            </and>
+        </not>
+        </condition>
+    </animation>
+    
+
+
+    <text>
+        <name>NAV1-src2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.0425</y-m>
+            <z-m>-0.0270</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">NAV1</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>NAV2-src2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.0300</y-m>
+            <z-m>-0.0270</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">NAV2</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>Gps-src2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.005</y-m>
+            <z-m>-0.0270</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+       <text type="string">GPS</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.005</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+  <text>
+        <name>NAV1-id2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.0425</y-m>
+            <z-m>-0.0320</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>instrumentation/nav[0]/nav-id</property>
+        <format>%0.5s</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+      <text>
+        <name>NAV2-id2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+              <y-m>0.0300</y-m>
+            <z-m>-0.0320</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>instrumentation/nav[1]/nav-id</property>
+        <format>%0.5s</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+      <text>
+        <name>GPS-id2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.005</y-m>
+            <z-m>-0.0320</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>autopilot/route-manager/wp/id</property>
+        <format>%0.5s</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    
+     <text>
+        <name>NAV1-off2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.0425</y-m>
+            <z-m>-0.0320</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">PWR OFF</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+      <text>
+        <name>NAV2-off2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+              <y-m>0.0300</y-m>
+            <z-m>-0.0320</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">PWR OFF</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+      <text>
+        <name>GPS-off2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.005</y-m>
+            <z-m>-0.0320</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type type="string">literal</type>
+        <text type="string">INAC RTE</text>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    
+       <text>
+        <name>GPS-br2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.005</y-m>
+            <z-m>-0.0370</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>autopilot/route-manager/wp/bearing-deg</property>
+        <format>%3.0f*</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>NAV1-br2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.0425</y-m>
+            <z-m>-0.0370</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav[0]/heading-deg</property>
+        <format>%3.0f*</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+   <text>
+        <name>NAV2-br2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.0300</y-m>
+            <z-m>-0.0370</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav[1]/heading-deg</property>
+        <format>%3.0f*</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+       <text>
+        <name>GPS-dst2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.005</y-m>
+            <z-m>-0.0420</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>autopilot/route-manager/wp/dist</property>
+        <format>%3.0fNM</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>NAV1-dst2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.0425</y-m>
+            <z-m>-0.0420</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav/nav-distance</property>
+        <format>%3.0fm</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>NAV2-dst2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.0300</y-m>
+            <z-m>-0.0420</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav[1]/nav-distance</property>
+        <format>%3.0fm</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>NAV1-ttw2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.0425</y-m>
+            <z-m>-0.0470</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav[0]/time-to-intercept-sec</property>
+        <format>%5.0fs</format>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    <text>
+        <name>NAV2-ttw2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>0.0300</y-m>
+            <z-m>-0.0470</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>number-value</type>
+        <property>instrumentation/nav[1]/time-to-intercept-sec</property>
+        <font>helvetica_bold.txf</font>
+        <format>%5.0fs</format>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+        <text>
+        <name>GPS-ttw2</name>
+        <offsets>
+            <x-m>-0.001</x-m>
+            <y-m>-0.005</y-m>
+            <z-m>-0.0470</z-m>
+        </offsets>
+        <alignment>left-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+        <type>text-value</type>
+        <property>autopilot/route-manager/wp/eta</property>
+        <font>helvetica_bold.txf</font>
+        <format>%sm:s</format>
+        <character-size>0.004</character-size>
+        <character-aspect-ratio type="double">1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">32</width>
+            <height type="int">32</height>
+        </font-resolution>
+    </text>
+    
+    
+ <animation>
+<type>select</type>
+<object-name>NAV1-off2</object-name>
+     <condition>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>0</value>
+       </equals>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>NAV2-off2</object-name>
+     <condition>
+       <equals>
+         <property>instrumentation/nav[1]/power-btn</property>
+         <value>0</value>
+       </equals>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>GPS-off2</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>0</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>NAV1-id2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/in-range</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>NAV2-id2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[1]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[1]/in-range</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>GPS-id2</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>NAV1-br2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/in-range</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>NAV2-br2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[1]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[1]/in-range</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>GPS-br2</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>NAV1-dst2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/dme-in-range</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>NAV2-dst2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[1]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[1]/dme-in-range</property>
+         <value>1</value>
+       </equals>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>GPS-dst2</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+     </condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>NAV1-ttw2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[0]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[0]/dme-in-range</property>
+         <value>1</value>
+       </equals>
+       <greater-than>
+          <property>velocities/groundspeed-kt</property>
+          <value>40</value>
+       </greater-than>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>NAV2-ttw2</object-name>
+     <condition>
+     <and>
+       <equals>
+         <property>instrumentation/nav[1]/power-btn</property>
+         <value>1</value>
+       </equals>
+       <equals>
+         <property>instrumentation/nav[1]/dme-in-range</property>
+         <value>1</value>
+       </equals>
+       <greater-than>
+          <property>velocities/groundspeed-kt</property>
+          <value>40</value>
+       </greater-than>
+       </and>
+     </condition>
+</animation>
+  <animation>
+<type>select</type>
+<object-name>GPS-ttw2</object-name>
+     <condition>
+       <equals>
+         <property>autopilot/route-manager/active</property>
+         <value>1</value>
+       </equals>
+     </condition>
+</animation>
+
+
+
+    <animation>
+        <name>green</name>
+        <type>material</type>
+        <object-name>MagHdg</object-name>
+        <object-name>TAS</object-name>
+        <object-name>GSPD</object-name>
+        <object-name>SAT</object-name>
+        <object-name>NAV1-src2</object-name>
+        <object-name>NAV1-id2</object-name>
+        <object-name>NAV1-br2</object-name>
+        <object-name>NAV1-dst2</object-name>
+        <object-name>NAV1-ttw2</object-name>
+        <object-name>NAV1-off2</object-name>
+        <emission>
+            <red>0.1</red>
+            <green>0.9</green>
+            <blue>0.1</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+    <animation>
+        <name>white</name>
+        <type>material</type>
+        <object-name>RNG1</object-name>
+        <object-name>RNG2</object-name>
+        <object-name>WINDSPEED</object-name>
+        <object-name>WINDSPEED2</object-name>
+        <object-name>S</object-name>
+        <object-name>Gps-rem-dst</object-name>
+        <object-name>Gps-from</object-name>
+        <object-name>Gps-to</object-name>
+        <object-name>Gps-nosrc</object-name>
+        <object-name>Gps-rem-eta</object-name>
+        <emission>
+            <red>0.9</red>
+            <green>0.9</green>
+            <blue>0.9</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+    <animation>
+        <name>magenta</name>
+        <type>material</type>
+        <object-name>Nav-src</object-name>
+        <object-name>Hdg-src</object-name>
+        <object-name>Gps-src</object-name>
+        <object-name>Gps-src2</object-name>
+        <object-name>GPS-id2</object-name>
+        <object-name>GPS-br2</object-name>
+        <object-name>GPS-dst2</object-name>
+        <object-name>GPS-ttw2</object-name>
+        <object-name>GPS-off2</object-name>
+        <object-name>Wing-src</object-name>
+        <object-name>Nav-id</object-name>
+        <object-name>Nav-dst</object-name>
+        <object-name>Nav-ttw</object-name>
+        <object-name>Gps-id</object-name>
+        <object-name>Gps-dst</object-name>
+        <object-name>Gps-ttw</object-name>
+        <object-name>GSPD</object-name>
+        <emission>
+            <red>0.95</red>
+            <green>0.2</green>
+            <blue>1.0</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+    <animation>
+        <name>cyan</name> <!-- more blueish now -->
+        <type>material</type>
+        <object-name>HDGannun</object-name>
+        <object-name>NAV2-src2</object-name>
+        <object-name>NAV2-id2</object-name>
+        <object-name>NAV2-br2</object-name>
+        <object-name>NAV2-dst2</object-name>
+        <object-name>NAV2-ttw2</object-name>
+        <object-name>NAV2-off2</object-name>
+        <emission>
+            <red>0</red>
+            <green>0.3</green>
+            <blue>0.9</blue>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation>
+
+</PropertyList>

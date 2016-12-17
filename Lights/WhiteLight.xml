@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <model>
+    <name>WhiteLightFlare</name>
+    <path>Aircraft/L-159/Models/Lights/Flares/WhiteLight-flare.xml</path>
+      <offsets>
+   <x-m>-0.40</x-m>
+   <y-m>0.00</y-m>
+   <z-m>-0.30</z-m>
+   <pitch-deg>-5</pitch-deg>
+  </offsets>
+  </model>
+
+  <model>
+    <name>WhiteLightRemb</name>
+    <path>Aircraft/L-159/Models/Lights/Rembrandt/WhiteLight-remb.xml</path>
+   <offsets>
+   <x-m>-0.40</x-m>
+   <y-m>0.00</y-m>
+   <z-m>-0.30</z-m>
+   <pitch-deg>-5</pitch-deg>
+  </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>WhiteLightFlare</object-name>
+    <object-name>WhiteLightRemb</object-name>
+    <condition>
+      <and>
+        <property>lightpack/white-light-intensity</property>
+        <not><property>sim/crashed</property></not>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>

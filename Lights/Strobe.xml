@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- beacon -->
+  <model>
+    <name>BeaconFlare</name>
+    <path>Aircraft/L-159/Models/Lights/Flares/Strobe-flare.xml</path>
+     <offsets>
+        <x-m>-0.40</x-m>
+        <y-m>0.00</y-m>
+        <z-m>-0.30</z-m>
+       <pitch-deg>0</pitch-deg>
+     </offsets>
+  </model>
+
+  <model>
+    <name>BeaconRemb</name>
+    <path>Aircraft/L-159/Models/Lights/Rembrandt/Strobe-remb.xml</path>
+     <offsets>
+        <x-m>-0.40</x-m>
+        <y-m>0.00</y-m>
+        <z-m>-0.30</z-m>
+       <pitch-deg>0</pitch-deg>
+     </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>BeaconFlare</object-name>
+    <object-name>BeaconRemb</object-name>
+    <condition>
+      <and>
+        <property>lightpack/strobe-state/state</property>
+        <not><property>sim/crashed</property></not>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>

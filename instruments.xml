@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+<!--
+  <path>L-159.ac</path>
+  -->
+
+<!--
+  <animation>
+  -->
+    <!-- Objets opaques -->
+    <!--
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>planchet</object-name>
+    <object-name>intportetour</object-name>
+    <object-name>intporteH</object-name>
+    <object-name>intporteB</object-name>
+    <object-name>seats</object-name>
+-->
+    <!-- Objets transparents -->
+    <!--
+    <object-name>intvitres</object-name>
+    <object-name>intportevitre</object-name>
+  </animation>
+  -->
+<!-- 
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intportevitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intportevitre</object-name>
+  </animation>
+-->
+  <!-- Pilote -->
+  <!-- 
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.487 </x-m>
+      <y-m> -0.360 </y-m>
+      <z-m> -0.315 </z-m>
+    </offsets>
+  </model>
+-->
+  <!-- Tableau de bord -->
+<!--   
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -3.035 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.376 </z-m>
+    </offsets>
+  </model>
+-->
+  <!-- Porte -->
+<!--   
+  <animation>
+    <name>IntPorteHaute</name>
+    <object-name>intporteH</object-name>
+    <object-name>intportevitre</object-name>
+    <object-name>intportetour</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteHaute</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> -110 </factor>
+    <axis>
+      <x1-m> -0.163 </x1-m>
+      <y1-m> -0.525 </y1-m>
+      <z1-m>  0.351 </z1-m>
+      <x2-m>  0.228 </x2-m>
+      <y2-m> -0.526 </y2-m>
+      <z2-m>  0.351 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>intporteB</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> 125 </factor>
+    <axis>
+      <x1-m> -0.185 </x1-m>
+      <y1-m> -0.583 </y1-m>
+      <z1-m> -0.859 </z1-m>
+      <x2-m>  0.250 </x2-m>
+      <y2-m> -0.561 </y2-m>
+      <z2-m> -0.859 </z2-m>
+    </axis> 
+    -->
+
+<!-- Instruments!!!!! -->
+
+<!-- EADI -->
+
+<model>
+   <path>Aircraft/L-159/Models/Instruments/EADI/eadi.xml</path>
+   <offsets>
+     <x-m> -3.6907</x-m>
+     <y-m> 0.022</y-m>
+     <z-m> -0.1175</z-m>
+        <pitch-deg>-5</pitch-deg>
+   </offsets>
+</model>
+ 
+
+ <!-- EHSI -->
+
+  <model>
+    <path>Aircraft/L-159/Models/Instruments/EHSI/ehsi.xml</path>
+    <offsets>
+      <x-m>  -3.6904 </x-m>
+      <y-m> 0.022</y-m>
+      <z-m> -0.270 </z-m>
+         <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+
+
+<!-- KLN90 -->
+<!--
+ <model>
+  <path>Aircraft/L-159/Models/Instruments/KLN90/KLN90.xml</path>
+  <offsets>
+   <x-m> -3.6504 </x-m>
+   <y-m> 0.0134 </y-m>
+   <z-m> -0.3636</z-m>
+  </offsets>
+ </model> 
+ -->
+ 
+ <!-- Alt -->
+
+  <model>
+  <path>Aircraft/L-159/Models/Instruments/Alt/altimeter.xml</path>
+  <offsets>
+   <x-m>-3.693</x-m>
+   <y-m> 0.0550</y-m>
+   <z-m> -0.1950</z-m>
+   <pitch-deg>-5</pitch-deg>
+  </offsets>
+ </model>
+
+
+<!-- VSI -->
+
+ <model>
+  <path>Aircraft/L-159/Models/Instruments/IVSI/IVSI.xml</path>
+  <offsets>
+   <x-m>-3.698</x-m>
+   <y-m>0.0900</y-m>
+   <z-m>-0.270</z-m>
+   <pitch-deg>-15</pitch-deg>
+  </offsets>
+ </model>
+ 
+ <!-- Attitude Indicator -->
+<!--
+ <model>
+  <path>Aircraft/L-159/Models/Instruments/ACM/stdby-adi.xml</path>
+  <offsets>
+   <x-m>-3.7029</x-m>
+   <y-m>-0.0763</y-m>
+   <z-m>-0.1500</z-m>
+   <pitch-deg>-5</pitch-deg>
+  </offsets>
+ </model>
+ -->
+
+ <model>
+  <path>Aircraft/L-159/Models/Instruments/Chronograph/chronograph.xml</path>
+  <offsets>
+   <x-m>-3.691</x-m>
+   <y-m>0.1800</y-m>
+   <z-m>-.3400</z-m>
+   <pitch-deg>-10</pitch-deg>
+  </offsets>
+ </model>
+ 
+  <model>
+  <path>Aircraft/L-159/Models/Instruments/AI/AI.xml</path>
+  <offsets>
+   <x-m>-3.6925</x-m>
+   <y-m>-0.0050</y-m>
+   <z-m>-0.1925</z-m>
+         <pitch-deg>-10</pitch-deg>
+  </offsets>
+ </model>
+ 
+ <!-- Flaps and Gear -->
+
+   <model>
+  <path>Aircraft/L-159/Models/Instruments/Gear/gear.xml</path>
+  <offsets>
+      <x-m>-3.702</x-m>
+			<y-m>-0.2</y-m>
+			<z-m>-0.2900</z-m>
+  </offsets>
+ </model>
+
+
+ <model>
+  <path>Aircraft/L-159/Models/Instruments/Gear/park-brake-light.xml</path>
+  <offsets>
+   <x-m>-3.7005</x-m>
+   <y-m>-0.205</y-m>
+   <z-m>-0.3330</z-m>
+  </offsets>
+ </model>
+ 
+  <model>
+  <path>Aircraft/L-159/Models/Instruments/Gear/speedbrake-light.xml</path>
+  <offsets>
+   <x-m>-3.7005</x-m>
+   <y-m>-0.26</y-m>
+   <z-m>-0.3315</z-m>
+   <pitch-deg>-8</pitch-deg> 
+  </offsets>
+ </model>
+
+
+  <model>
+  <path>Aircraft/L-159/Models/Instruments/Flaps/flaps.xml</path>
+  
+  <offsets>
+     <x-m>-3.695</x-m>
+     <y-m>-0.045</y-m>
+     <z-m>-0.270</z-m>
+     <!--
+			<x-m>-3.68</x-m>
+      <y-m>-0.26</y-m>
+      <z-m>-0.3315</z-m>
+      -->
+			<pitch-deg>-15</pitch-deg> 
+  </offsets>
+ </model>
+
+ 
+  <model>
+    <path>Aircraft/L-159/Models/Instruments/gearlever/gearlever.xml</path>
+	<name>gearlever</name>
+    <offsets>
+      <x-m> -3.67 </x-m>
+      <y-m> -0.1455 </y-m>
+      <z-m>  -0.3009 </z-m>
+    </offsets>
+  </model> 
+
+<!-- Autopilot and Lighting Controls -->
+
+    <!-- Autopilot -->
+
+      <model>
+        <name>apcomm</name>
+        <path>Aircraft/L-159/Models/Instruments/ap/apcomm2.xml</path>
+        <offsets>
+            <x-m>-3.696</x-m>
+            <y-m>.2350</y-m>
+            <z-m>-.3400</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+ 
+  <model>
+    <path>Aircraft/L-159/Models/Instruments/AP_KNOBS/ap_knobs.xml</path>
+	<name>autopilot_knobs</name>
+    <offsets>
+      <x-m> -3.65 </x-m>
+      <y-m> 0.2525 </y-m>
+      <z-m>  -0.3751 </z-m>
+          <pitch-deg>-90</pitch-deg>
+          <roll-deg>15</roll-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/L-159/Models/Instruments/lightswitches/lightswitch.xml</path>
+	<name>light_switches</name>
+    <offsets>
+      <x-m> -3.6170</x-m>
+      <y-m> 0.2450 </y-m>
+      <z-m>  -0.3751 </z-m>
+    <pitch-deg>-90</pitch-deg>
+    <roll-deg>15</roll-deg>
+    </offsets>
+  </model>   
+
+    <model>
+        <name>MFD1</name>
+        <path>Aircraft/L-159/Models/Instruments/MFD/MFD3d.xml</path>
+        <offsets>
+            <x-m>-3.690</x-m>
+            <y-m>-0.0900</y-m>
+            <z-m>-0.175</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>EICAS1</name>
+        <path>Aircraft/L-159/Models/Instruments/EICAS/EICAS3d.xml</path>
+        <offsets>
+            <x-m>-3.690</x-m>
+            <y-m>0.1400</y-m>
+            <z-m>-0.175</z-m>
+            
+        </offsets>
+    </model>
+    
+<!-- COMMASTER! -->
+
+    <model>
+        <name>COMMASTER</name>
+        <path>Aircraft/L-159/Models/Instruments/COMMASTER/commaster_2A.xml</path>
+        <offsets>
+            <x-m>-3.65</x-m>
+            <y-m>0.022</y-m>
+            <z-m>-0.0300</z-m>
+            <pitch-deg>-15</pitch-deg>
+        </offsets>
+    </model>
+
+<model>
+       <name>Throttles</name>
+       <path>Aircraft/L-159/Models/Instruments/Throttles/Throttles.xml</path>
+</model>
+
+<model>
+       <name>Throttles</name>
+       <path>Aircraft/L-159/Models/Instruments/Sticks/Sticks.xml</path>
+</model>
+  <!-- Hide the instruments when disintegrating -->
+  <!--
+  <animation>
+    <type>select</type>
+    <object-name>GearDoors</object-name>
+    <object-name>GearDoors.1</object-name>
+    <object-name>GearDoors.2</object-name>
+    <object-name>GearDoors.3</object-name>
+    <object-name>GearDoors.4</object-name>
+    <object-name>FuelProbe</object-name>
+    <condition>
+      <not><property>sim/multiplay/generic/int[7]</property></not>
+    </condition>
+  </animation> -->
+  
+</PropertyList>
