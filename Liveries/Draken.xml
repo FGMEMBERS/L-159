@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <sim>
+    <model>
+        <livery>
+            <name type="string">Draken International</name>
+            <texture>Liveries/Draken.png</texture>
+        </livery>
+    </model>
+ </sim>
+</PropertyList>
